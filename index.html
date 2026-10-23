@@ -3,81 +3,274 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VeeBee Code Apps - Official Developer Website</title>
-  <meta name="description" content="Official website and support for VeeBee Code Apps on Google Play.">
+  <title>VeeBee Code Apps | Independent Android Application Studio</title>
+  <meta name="description" content="Official website of VeeBee Code Apps — an independent mobile software engineering studio creating high-performance, privacy-first Android applications.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="container nav-wrapper">
+  <!-- Ambient background lighting -->
+  <div class="ambient-glow-top"></div>
+  <div class="ambient-glow-mid"></div>
+
+  <!-- Floating Pill Navbar -->
+  <header class="floating-header">
+    <nav class="nav-pill">
       <a href="index.html" class="logo">
-        <span>⚡</span> VeeBee Code Apps
+        <span class="logo-badge">⚡</span>
+        <span>VeeBee Code Apps</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#apps">Our Apps</a></li>
+        <li><a href="#philosophy">Studio Standards</a></li>
+        <li><a href="#trust">Organization</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
         <li><a href="terms.html">Terms</a></li>
         <li><a href="disclaimer.html">Disclaimer</a></li>
-        <li><a href="#support">Support</a></li>
+        <li><a href="mailto:contact@veebeecodes.me" class="nav-cta">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
   <main class="container">
+
+    <!-- Studio Hero Section -->
     <section class="hero">
-      <div class="app-icon">🚀</div>
-      <h1>VeeBee Code Apps</h1>
-      <p>Building intuitive, modern, and high-performance Android applications designed to make everyday life easier.</p>
-      <div class="btn-group">
-        <a href="#apps" class="btn btn-primary">
-          Explore Our Apps
-        </a>
-        <a href="#support" class="btn btn-outline">Contact Support</a>
+      <div class="shimmer-badge">
+        <span class="pulse-dot"></span>
+        <span>Independent Android Engineering Studio • Bengaluru, India</span>
       </div>
-    </section>
 
-    <section id="apps" class="features">
-      <h2 style="text-align: center; font-size: 2rem;">Our Applications</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>📱 Featured App</h3>
-          <p style="margin-bottom: 1rem;">Experience clean UI, robust performance, and seamless user experiences on your Android device.</p>
-          <a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
-            View on Google Play &rarr;
-          </a>
-        </div>
-        <div class="card">
-          <h3>⚡ Blazing Fast</h3>
-          <p>Engineered following Google's recommended Modern Android Development (MAD) architecture.</p>
-        </div>
-        <div class="card">
-          <h3>🔒 Privacy First</h3>
-          <p>We respect your privacy. No invasive tracking, no hidden background listeners.</p>
-        </div>
-      </div>
-    </section>
+      <h1>
+        High-Performance Software.<br>
+        <span class="highlight">Engineered for Your Privacy.</span>
+      </h1>
 
-    <section id="support" class="card" style="margin-top: 3rem; text-align: center;">
-      <h2 style="margin-bottom: 0.75rem;">Developer & App Support</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-        Need help, want to report a bug, or have a feature suggestion? Contact the VeeBee Code Apps team.
+      <p class="lead">
+        VeeBee Code Apps designs intuitive, offline-first mobile software for Android. From comprehensive financial tools to daily productivity engines — zero cloud lock-in, zero telemetry, and sub-100ms native speed.
       </p>
-      <a href="mailto:contact@veebeecodes.me" class="btn btn-outline">
-        📧 contact@veebeecodes.me
-      </a>
+
+      <div class="hero-actions">
+        <a href="#apps" class="btn btn-primary">
+          Explore App Ecosystem ↓
+        </a>
+        <a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps" target="_blank" rel="noopener" class="btn btn-glass">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-.92L3 21V3c0-.36.1-.7.28-.99l.329-.196zM15.207 13.414l2.586 2.586-12.01 6.945 9.424-9.531zm0-2.828L5.783 1.055 17.793 8l-2.586 2.586zm1.414 1.414l3.586 2.071c.78.45.78 1.18 0 1.63L16.621 17.7l-2.207-2.207 2.207-2.207z"/>
+          </svg>
+          Google Play Store
+        </a>
+      </div>
     </section>
+
+    <!-- App Ecosystem Catalog -->
+    <section id="apps" class="features">
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Studio Catalog</div>
+        <h2 class="section-title">The VeeBee App Ecosystem</h2>
+        <p class="section-desc">Utility software designed around your device, not a remote server.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- App 1: Flagship (Span 2) -->
+        <div class="bento-card span-2" style="border-color: rgba(56, 189, 248, 0.35);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div class="bento-icon" style="background: rgba(37, 99, 235, 0.2); border-color: rgba(56, 189, 248, 0.4);">📊</div>
+              <span class="sim-pill" style="font-size: 0.8rem; background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                ● Live on Google Play
+              </span>
+            </div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">VeeBee: Finance Calculator</h3>
+            <p style="font-size: 1.02rem; color: #cbd5e1; margin-bottom: 1.25rem;">
+              Comprehensive financial planning and calculation suite. Features 64+ verified calculators spanning EMI &amp; home loans, mutual fund SIPs, government schemes (PPF, SSY, NPS, EPF), and commercial business taxes with instant PDF exports.
+            </p>
+            <div class="chip-cloud" style="margin-bottom: 1.75rem;">
+              <span class="chip" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.25);">64 Financial Tools</span>
+              <span class="chip">100% Offline SQLite</span>
+              <span class="chip">No Mandatory Login</span>
+              <span class="chip">PDF &amp; Excel Reports</span>
+              <span class="chip">Dark / Light Material 3</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">
+              View on Google Play &rarr;
+            </a>
+            <a href="FinanceCalculator.apk" class="btn btn-glass" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">
+              Download Direct APK
+            </a>
+          </div>
+        </div>
+
+        <!-- App 2: Productivity Pipeline -->
+        <div class="bento-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div class="bento-icon" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">🎯</div>
+              <span class="sim-pill" style="font-size: 0.75rem; background: rgba(168, 85, 247, 0.12); color: #c084fc; border-color: rgba(168, 85, 247, 0.25);">
+                In Development
+              </span>
+            </div>
+            <h3>VeeBee: Focus &amp; Habits</h3>
+            <p>
+              Minimalist daily routine and deep-work interval timer. Designed without social feeds, gamified spam, or accounts. Track habits locally with pure privacy.
+            </p>
+          </div>
+          <div class="chip-cloud">
+            <span class="chip">Pomodoro Intervals</span>
+            <span class="chip">Offline Heatmaps</span>
+            <span class="chip">Zero Telemetry</span>
+          </div>
+        </div>
+
+        <!-- App 3: Privacy Notes & Vault Pipeline -->
+        <div class="bento-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div class="bento-icon" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">🔒</div>
+              <span class="sim-pill" style="font-size: 0.75rem; background: rgba(148, 163, 184, 0.12); color: #94a3b8; border-color: rgba(148, 163, 184, 0.25);">
+                In Pipeline
+              </span>
+            </div>
+            <h3>VeeBee: Secure Vault</h3>
+            <p>
+              Hardware-backed local encrypted storage for sensitive notes, passwords, and documents. Uses Android KeyStore and biometric authentication.
+            </p>
+          </div>
+          <div class="chip-cloud">
+            <span class="chip">AES-256 GCM</span>
+            <span class="chip">Android KeyStore</span>
+            <span class="chip">Biometric Lock</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Architecture Commitment (Span 2) -->
+        <div class="bento-card span-2">
+          <div>
+            <div class="bento-icon">⚙️</div>
+            <h3>Unified Native Android Engineering</h3>
+            <p>
+              Every application published by VeeBee Code Apps adheres to Google's Modern Android Development (MAD) standards. Built with Kotlin, Jetpack Compose, Coroutines, and local SQLite persistence — guaranteeing snappy 120Hz frame rates and long-term operating system compatibility.
+            </p>
+          </div>
+          <div class="chip-cloud">
+            <span class="chip">100% Kotlin 2.0</span>
+            <span class="chip">Jetpack Compose UI</span>
+            <span class="chip">Material You Dynamic</span>
+            <span class="chip">Sub-100ms Startup</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Standards / Philosophy -->
+    <section id="philosophy" class="features" style="padding-top: 0;">
+      <div class="section-title-wrap">
+        <div class="section-eyebrow">Studio Principles</div>
+        <h2 class="section-title">How We Build Software</h2>
+        <p class="section-desc">The four core engineering pillars shared across all VeeBee applications.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-icon">🛡️</div>
+          <h3>Privacy by Architecture</h3>
+          <p>
+            Your inputs, calculations, and personal documents never leave your physical device. We do not run tracking servers, user profiling databases, or invasive background listeners.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">⚡</div>
+          <h3>Zero Subscription Fatigue</h3>
+          <p>
+            We reject predatory monthly micro-charges on basic utility tools. Our apps are free to use with optional, transparent, one-time lifetime upgrades that you own forever.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">🔋</div>
+          <h3>Offline-First Independence</h3>
+          <p>
+            No network? No problem. Core calculations, note taking, and productivity workflows function completely offline without chewing battery or requiring Wi-Fi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organization Verification & Trust Strip -->
+    <section id="trust" class="trust-strip">
+      <div class="trust-item">
+        <h4>Developer Organization</h4>
+        <div class="trust-val">VEEBEE CODE APPS</div>
+        <div class="trust-sub">Sole Proprietorship Entity</div>
+      </div>
+      <div class="trust-item">
+        <h4>Govt of India MSME</h4>
+        <div class="trust-val">UDYAM-KR-03-0744371</div>
+        <div class="trust-sub">Ministry of MSME Registered</div>
+      </div>
+      <div class="trust-item">
+        <h4>Global Identifier</h4>
+        <div class="trust-val">D-U-N-S® 311849217</div>
+        <div class="trust-sub">Dun &amp; Bradstreet Verified</div>
+      </div>
+      <div class="trust-item">
+        <h4>Headquarters</h4>
+        <div class="trust-val">Bengaluru, India</div>
+        <div class="trust-sub">Koramangala 1st Block</div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
+  <!-- Studio Footer -->
+  <footer class="studio-footer">
     <div class="container">
-      <p>&copy; 2026 VeeBee Code Apps. All rights reserved.</p>
-      <p style="margin-top: 0.5rem;">
-        <a href="privacy.html">Privacy Policy</a> &bull; 
-        <a href="terms.html">Terms of Service</a> &bull; 
-        <a href="disclaimer.html">Disclaimer</a> &bull; 
-        <a href="mailto:contact@veebeecodes.me">Contact Support</a>
-      </p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>VeeBee Code Apps</h4>
+          <p>
+            Independent mobile software engineering studio based in Bengaluru, Karnataka, India. Creating robust, offline-first applications for Android.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>App Suite</h5>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener">Finance Calculator</a></li>
+            <li><a href="FinanceCalculator.apk">Download APK</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps" target="_blank" rel="noopener">Developer Profile ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal &amp; Policies</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Financial Disclaimer</a></li>
+            <li><a href="app-ads.txt">app-ads.txt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Developer Office</h5>
+          <ul>
+            <li><a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a></li>
+            <li><a href="https://veebeecodes.me">veebeecodes.me</a></li>
+            <li style="color: var(--text-dim); font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
+              502, Tumbida Mane, 1st Block, Koramangala 2nd Main, Bengaluru, Karnataka 560034
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
+        <div>Registered with MSME, Govt of India &bull; Verified Google Play Publisher</div>
+      </div>
     </div>
   </footer>
 
