@@ -448,6 +448,18 @@ header, header.floating-header {
   box-shadow: 0 8px 22px -4px rgba(0, 82, 255, 0.36);
 }
 
+.gp-icon-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(8, 31, 92, 0.18);
+}
+
 .btn-primary:hover {
   background: var(--brand-primary-hover);
   transform: translateY(-2px);
