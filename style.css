@@ -1305,6 +1305,25 @@ input[type="range"].veebee-slider::-moz-range-thumb {
   gap: 1.5rem;
 }
 
+.coming-soon-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-xs);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2rem;
+  align-items: center;
+  transition: transform 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out), border-color 0.22s ease;
+}
+
+.coming-soon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-brand);
+}
+
 .bento-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -1736,7 +1755,8 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 
-  .roadmap-grid {
+  .roadmap-grid,
+  .coming-soon-card {
     grid-template-columns: 1fr;
   }
 
@@ -1826,6 +1846,7 @@ footer a:hover {
   .showcase-shell,
   .calc-demo-card,
   .flagship-suite-card,
+  .coming-soon-card,
   .bento-card {
     padding: 1.35rem;
   }
