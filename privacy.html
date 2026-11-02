@@ -5,24 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Finance Calculator | VeeBee Code Apps</title>
   <meta name="description" content="Official Privacy Policy for Finance Calculator (com.veebee.fincalc) published by VeeBee Code Apps.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <header class="floating-header">
-    <nav class="nav-pill">
+    <nav class="nav-pill" aria-label="Primary Navigation">
       <a href="index.html" class="logo">
-        <span class="logo-badge">⚡</span>
-        <span>VeeBee Code Apps</span>
+        <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
+        <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
       </a>
-      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" onclick="toggleMenu()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
         </svg>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+        <li><a href="privacy.html" class="active" aria-current="page">Privacy Policy</a></li>
         <li><a href="terms.html">Terms</a></li>
         <li><a href="disclaimer.html">Disclaimer</a></li>
         <li><a href="mailto:contact@veebeecodes.me" class="nav-cta">Contact</a></li>
@@ -30,7 +32,7 @@
     </nav>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container">
     <div class="doc-content">
       <h1>Privacy Policy</h1>
       <div class="doc-meta">Last updated: October 9, 2026</div>
@@ -67,7 +69,7 @@
           <strong>Google Play services</strong> may process data under Google's own Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
         </li>
         <li>
-          <strong>Analytics & Crash Reporting:</strong> The App does not use analytics or crash-reporting services.
+          <strong>Analytics &amp; Crash Reporting:</strong> The App does not use analytics or crash-reporting services.
         </li>
       </ul>
 
@@ -122,22 +124,29 @@
     </div>
   </main>
 
-  <footer>
+  <footer class="studio-footer">
     <div class="container">
-      <p>&copy; 2026 VeeBee Code Apps. All rights reserved.</p>
-      <p style="margin-top: 0.5rem;">
-        <a href="privacy.html">Privacy Policy</a> &bull; 
-        <a href="terms.html">Terms of Service</a> &bull; 
-        <a href="disclaimer.html">Disclaimer</a> &bull; 
-        <a href="mailto:contact@veebeecodes.me">Contact Support</a>
-      </p>
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
+        <div>
+          <a href="index.html">Home</a> &bull;
+          <a href="privacy.html">Privacy Policy</a> &bull;
+          <a href="terms.html">Terms of Service</a> &bull;
+          <a href="disclaimer.html">Disclaimer</a> &bull;
+          <a href="mailto:contact@veebeecodes.me">Contact Support</a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
     function toggleMenu() {
       const menu = document.getElementById('nav-links');
-      if (menu) menu.classList.toggle('is-open');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
     }
   </script>
 </body>

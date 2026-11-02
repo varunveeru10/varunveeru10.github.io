@@ -3,213 +3,883 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VeeBee Code Apps | Independent Android Application Studio</title>
-  <meta name="description" content="Official website of VeeBee Code Apps — an independent mobile software engineering studio creating high-performance, privacy-first Android applications.">
+  <title>VeeBee Code Apps | Independent Android Software Studio &amp; Financial Tools</title>
+  <meta name="description" content="Official website of VeeBee Code Apps — Bengaluru-based Android application studio building privacy-first, offline-capable software including VeeBee: Finance Calculator (64+ Indian Financial Tools).">
+  <meta property="og:title" content="VeeBee Code Apps | Precision Android Software Studio">
+  <meta property="og:description" content="Explore VeeBee: Finance Calculator (64+ Indian Financial & Tax Calculators) and upcoming privacy-first Android apps by VeeBee Code Apps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veebeecodes.me/">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does VeeBee: Finance Calculator require an account, login, or PAN number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. VeeBee: Finance Calculator works immediately after installation without sign-up, phone number verification, or personal identity details. All saved calculations, goals, and net worth logs stay strictly inside your phone's local SQLite storage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the Free plan versus the Pro Lifetime Upgrade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All 64+ financial calculators, interactive charts, light/dark themes, App Lock, and local backup/restore are available for everyone. The Free tier supports up to 10 saved calculations, 2 financial goals, 6 net worth items, and 2 payment reminders with non-intrusive ads. The one-time Pro Lifetime Upgrade removes all ads permanently and enables unlimited saved calculations, goals, net worth items, reminders, and instant PDF exports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the Indian Income Tax slabs and government scheme rates updated for FY 2026-27?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Income Tax Calculator supports side-by-side comparison of the New Tax Regime (Default) and Old Tax Regime for FY 2026-27, FY 2025-26, and FY 2024-25, including Section 87A rebates, standard deductions, and slab-wise breakdowns, alongside PPF, EPF, SSY, NPS, and Post Office schemes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What other apps are built by VeeBee Code Apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VeeBee Code Apps is an independent Android engineering studio in Bengaluru, India. Alongside our flagship VeeBee: Finance Calculator, we are developing VeeBee: Focus & Habits (an offline deep-work and habit tracker) and VeeBee: Secure Vault (an AES-256 hardware-keyed document and note locker)."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <!-- Ambient background lighting -->
-  <div class="ambient-glow-top"></div>
-  <div class="ambient-glow-mid"></div>
+  <!-- Soft Astra Light Ambient Mesh -->
+  <div class="ambient-glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow-mid" aria-hidden="true"></div>
 
-  <!-- Floating Pill Navbar -->
+  <!-- Sticky Frosted Pill Header -->
   <header class="floating-header">
-    <nav class="nav-pill">
-      <a href="index.html" class="logo">
-        <span class="logo-badge">⚡</span>
-        <span>VeeBee Code Apps</span>
+    <nav class="nav-pill" aria-label="Primary Navigation">
+      <a href="index.html" class="logo" aria-current="page">
+        <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
+        <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
       </a>
-      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" onclick="toggleMenu()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
         </svg>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#apps" onclick="closeMenu()">Our Apps</a></li>
-        <li><a href="#philosophy" onclick="closeMenu()">Studio Standards</a></li>
-        <li><a href="#trust" onclick="closeMenu()">Organization</a></li>
+        <li><a href="#showcase" onclick="closeMenu()">Flagship App</a></li>
+        <li><a href="#live-calculator" onclick="closeMenu()">Try Calculator</a></li>
+        <li><a href="#apps" onclick="closeMenu()">Studio Catalog</a></li>
+        <li><a href="#why-veebee" onclick="closeMenu()">Why VeeBee</a></li>
+        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
         <li><a href="privacy.html">Privacy</a></li>
         <li><a href="terms.html">Terms</a></li>
         <li><a href="disclaimer.html">Disclaimer</a></li>
-        <li><a href="mailto:contact@veebeecodes.me" class="nav-cta">Contact</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="nav-cta">Google Play ↗</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container">
 
-    <!-- Studio Hero Section -->
-    <section class="hero">
-      <div class="shimmer-badge">
-        <span class="pulse-dot"></span>
-        <span>Independent Android Engineering Studio • Bengaluru, India</span>
+    <!-- Split Hero Section (PayRupik Structure + Astra Modern Light Polish) -->
+    <section class="hero-split">
+      <div class="hero-content">
+        <div class="eyebrow-pill">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span>MSME &amp; D-U-N-S® Verified Android Studio • Bengaluru</span>
+        </div>
+
+        <h1 data-pretext>
+          Precision Android Apps.<br>
+          <span class="highlight">Built for Privacy &amp; Clarity.</span>
+        </h1>
+
+        <p class="hero-lead" data-pretext>
+          <strong>VeeBee Code Apps</strong> crafts fast, offline-first utility software for Android. Experience our flagship release, <strong>VeeBee: Finance Calculator</strong> — 64+ Indian loan, SIP, tax, and wealth calculators engineered with zero cloud tracking.
+        </p>
+
+        <ul class="hero-checks">
+          <li>
+            <span class="check-badge" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span>64+ Indian Financial, Tax (FY 2026–27) &amp; Wealth Tools</span>
+          </li>
+          <li>
+            <span class="check-badge" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span>100% On-Device SQLite Storage — No Login or PAN Needed</span>
+          </li>
+          <li>
+            <span class="check-badge" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span>Clean 1-Page PDF Reports, Net Worth &amp; Goal Tracking</span>
+          </li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-.92L3 21V3c0-.36.1-.7.28-.99l.329-.196zM15.207 13.414l2.586 2.586-12.01 6.945 9.424-9.531zm0-2.828L5.783 1.055 17.793 8l-2.586 2.586zm1.414 1.414l3.586 2.071c.78.45.78 1.18 0 1.63L16.621 17.7l-2.207-2.207 2.207-2.207z"/>
+            </svg>
+            Get on Google Play
+          </a>
+          <a href="FinanceCalculator.apk" class="btn btn-secondary">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/>
+            </svg>
+            Direct APK
+          </a>
+          <a href="#showcase" class="btn btn-secondary">
+            Explore App Screens ↓
+          </a>
+        </div>
       </div>
 
-      <h1>
-        High-Performance Software.<br>
-        <span class="highlight">Engineered for Your Privacy.</span>
-      </h1>
+      <!-- Layered 3D Phone Duo Stage -->
+      <div class="hero-visual">
+        <div class="hero-stage-aura" aria-hidden="true"></div>
+        <div class="phone-duo">
+          <img
+            src="assets/phone-home-cutout.png"
+            alt="VeeBee Finance Calculator Home Screen showing Quick EMI slider and Popular Calculators"
+            class="phone-main"
+            width="272"
+            height="570"
+            fetchpriority="high"
+          >
+          <img
+            src="assets/phone-networth-cutout.png"
+            alt="VeeBee Finance Calculator Private Net Worth Dashboard screen"
+            class="phone-secondary"
+            width="248"
+            height="527"
+          >
 
-      <p class="lead">
-        VeeBee Code Apps designs intuitive, offline-first mobile software for Android. From comprehensive financial tools to daily productivity engines — zero cloud lock-in, zero telemetry, and sub-100ms native speed.
-      </p>
+          <!-- Floating Badge 1 -->
+          <div class="floating-badge floating-badge-top">
+            <div class="fb-icon" style="background: var(--bg-ice); color: var(--brand-primary);">₹</div>
+            <div>
+              <div class="fb-label">Tax Regime Diff</div>
+              <div class="fb-val">Save ₹75,400 / yr</div>
+            </div>
+          </div>
 
-      <div class="hero-actions">
-        <a href="#apps" class="btn btn-primary">
-          Explore App Ecosystem ↓
-        </a>
-        <a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps" target="_blank" rel="noopener" class="btn btn-glass">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-.92L3 21V3c0-.36.1-.7.28-.99l.329-.196zM15.207 13.414l2.586 2.586-12.01 6.945 9.424-9.531zm0-2.828L5.783 1.055 17.793 8l-2.586 2.586zm1.414 1.414l3.586 2.071c.78.45.78 1.18 0 1.63L16.621 17.7l-2.207-2.207 2.207-2.207z"/>
-          </svg>
-          Google Play Store
-        </a>
+          <!-- Floating Badge 2 -->
+          <div class="floating-badge floating-badge-bottom">
+            <div class="fb-icon" style="background: var(--brand-emerald-bg); color: var(--brand-emerald);">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="fb-label">Data Privacy</div>
+              <div class="fb-val">100% On-Device</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- App Ecosystem Catalog -->
-    <section id="apps" class="features">
-      <div class="section-title-wrap">
-        <div class="section-eyebrow">Studio Catalog</div>
-        <h2 class="section-title">The VeeBee App Ecosystem</h2>
-        <p class="section-desc">Utility software designed around your device, not a remote server.</p>
+    <!-- 4-Card Key Highlights Bar (PayRupik Reference Pattern) -->
+    <section class="metrics-strip" aria-label="Studio and Flagship App Highlights">
+      <div class="metric-card">
+        <div class="metric-icon" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="metric-number">64+</div>
+        <div class="metric-label">Verified Finance &amp; Tax Tools</div>
       </div>
 
-      <div class="bento-grid">
-        <!-- App 1: Flagship (Span 2) -->
-        <div class="bento-card span-2" style="border-color: rgba(56, 189, 248, 0.35);">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-              <div class="bento-icon" style="background: rgba(37, 99, 235, 0.2); border-color: rgba(56, 189, 248, 0.4);">📊</div>
-              <span class="sim-pill" style="font-size: 0.8rem; background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
-                ● Live on Google Play
-              </span>
-            </div>
-            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">VeeBee: Finance Calculator</h3>
-            <p style="font-size: 1.02rem; color: #cbd5e1; margin-bottom: 1.25rem;">
-              Comprehensive financial planning and calculation suite. Features 64+ verified calculators spanning EMI &amp; home loans, mutual fund SIPs, government schemes (PPF, SSY, NPS, EPF), and commercial business taxes with instant PDF exports.
+      <div class="metric-card">
+        <div class="metric-icon" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div class="metric-number">0</div>
+        <div class="metric-label">Logins or Cloud Servers</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div class="metric-number">&lt; 50ms</div>
+        <div class="metric-label">Native Kotlin 2.0 Compute</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div class="metric-number">PDF &amp; PNG</div>
+        <div class="metric-label">Instant 1-Tap Report Export</div>
+      </div>
+    </section>
+
+    <!-- Flagship App Interactive Screen Tour -->
+    <section id="showcase" class="section-block">
+      <div class="section-header">
+        <span class="section-eyebrow">Flagship Product Tour</span>
+        <h2 class="section-title">Inside VeeBee: Finance Calculator</h2>
+        <p class="section-desc">
+          Built specifically for Indian borrowers, investors, and taxpayers. Click any module below to inspect the real Android interface.
+        </p>
+      </div>
+
+      <div class="showcase-shell">
+        <div class="showcase-tabs" role="tablist" aria-label="App Feature Screens">
+          <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-home" id="tab-home" onclick="switchTab('home')">
+            1. Quick EMI &amp; Home
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-catalog" id="tab-catalog" onclick="switchTab('catalog')">
+            2. 64+ Tool Catalog
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-emisip" id="tab-emisip" onclick="switchTab('emisip')">
+            3. EMI &amp; SIP Charts
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-tax" id="tab-tax" onclick="switchTab('tax')">
+            4. Income Tax (New vs Old)
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rentbuy" id="tab-rentbuy" onclick="switchTab('rentbuy')">
+            5. Rent vs Buy Wealth
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-networth" id="tab-networth" onclick="switchTab('networth')">
+            6. Private Net Worth
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-export" id="tab-export" onclick="switchTab('export')">
+            7. PDF &amp; Card Exports
+          </button>
+        </div>
+
+        <!-- Panel 1: Home -->
+        <div class="showcase-panel is-active" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
+          <div class="panel-copy">
+            <span class="panel-tag">Instant Calculation Hub</span>
+            <h3>All-in-One Indian Finance Dashboard</h3>
+            <p>
+              Launch straight into an interactive Quick Calculate card for EMI and SIP without navigating deep menus. Adjust loan amount, interest rate, and tenure with tactile sliders or exact numeric input.
             </p>
-            <div class="chip-cloud" style="margin-bottom: 1.75rem;">
-              <span class="chip" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.25);">64 Financial Tools</span>
-              <span class="chip">100% Offline SQLite</span>
-              <span class="chip">No Mandatory Login</span>
-              <span class="chip">PDF &amp; Excel Reports</span>
-              <span class="chip">Dark / Light Material 3</span>
-            </div>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Native Indian numbering system formatting (Lakhs &amp; Crores)</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>1-tap access to EMI, SIP, Income Tax, Savings, and 64+ tools</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>5-tab bottom navigation: Home, Calculators, Net Worth, Goals, Settings</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+              Download on Google Play &rarr;
+            </a>
           </div>
-          <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">
-              View on Google Play &rarr;
-            </a>
-            <a href="FinanceCalculator.apk" class="btn btn-glass" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">
-              Download Direct APK
-            </a>
+          <div class="panel-visual">
+            <img src="assets/phone-home-cutout.png" alt="All-in-One Indian Finance Calculator Home Screen" width="280" height="586">
           </div>
         </div>
 
-        <!-- App 2: Productivity Pipeline -->
-        <div class="bento-card">
+        <!-- Panel 2: Catalog -->
+        <div class="showcase-panel" id="panel-catalog" role="tabpanel" aria-labelledby="tab-catalog">
+          <div class="panel-copy">
+            <span class="panel-tag">Adaptive Material 3</span>
+            <h3>64+ Calculators in Crisp Light &amp; Dark Mode</h3>
+            <p>
+              Every financial formula you need — organized into intuitive categories with instant search and bookmarking. Designed to look razor-sharp in both daylight and low-light environments.
+            </p>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>Loans &amp; EMI (9 tools):</strong> Home Loan EMI, Prepayment, Balance Transfer, Flat vs Reducing Rate</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>Investments &amp; Govt Schemes:</strong> SIP, Step-Up SIP, Lumpsum, PPF, EPF, SSY, NPS, SCSS, KVP</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>Tax, Retirement &amp; Markets:</strong> Income Tax, HRA, Gratuity, Capital Gains, XIRR, Black-Scholes</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+              Explore All 64 Calculators &rarr;
+            </a>
+          </div>
+          <div class="panel-visual">
+            <img src="assets/phone-catalog-cutout.png" alt="64+ Calculators in Light and Dark Mode Split View" width="280" height="584" fetchpriority="low" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Panel 3: EMI & SIP -->
+        <div class="showcase-panel" id="panel-emisip" role="tabpanel" aria-labelledby="tab-emisip">
+          <div class="panel-copy">
+            <span class="panel-tag">Visual Amortization</span>
+            <h3>Smarter EMI &amp; SIP Compounding Projections</h3>
+            <p>
+              Go beyond a single monthly figure. Inspect yearly and monthly amortization tables, principal-vs-interest donut rings, and 20-year SIP wealth compounding bar charts.
+            </p>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Year-by-year and month-by-month opening balance &amp; interest breakdown</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Gain multiplier indicator (e.g., 3.19× wealth growth over 20 years)</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Smart callout cards explaining total interest cost in plain language</span>
+              </li>
+            </ul>
+            <a href="#live-calculator" class="btn btn-primary">
+              Try Live Web Calculator Below ↓
+            </a>
+          </div>
+          <div class="panel-visual">
+            <img src="assets/screen-emi-sip.png" alt="Smarter EMI and SIP Projections Dual Phone View" width="360" height="504" fetchpriority="low" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Panel 4: Income Tax -->
+        <div class="showcase-panel" id="panel-tax" role="tabpanel" aria-labelledby="tab-tax">
+          <div class="panel-copy">
+            <span class="panel-tag">FY 2026–27 Ready</span>
+            <h3>Compare New vs Old Income Tax Regimes</h3>
+            <p>
+              Enter your gross annual CTC and deductions once to see an instant verdict on which tax regime saves you more money — complete with slab-wise visual bars and 4% health &amp; education cess.
+            </p>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Supports FY 2026–27, FY 2025–26, and FY 2024–25 tax rules</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Side-by-side table of Gross Income, Deductions, 87A Rebate, and Cess</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Color-coded slab breakdown (0%, 5%, 10%, 15%, 20%, 30%)</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+              Calculate Your Tax Savings &rarr;
+            </a>
+          </div>
+          <div class="panel-visual">
+            <img src="assets/phone-tax-cutout.png" alt="Compare New vs Old Income Tax Regimes Screen" width="280" height="611" fetchpriority="low" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Panel 5: Rent vs Buy -->
+        <div class="showcase-panel" id="panel-rentbuy" role="tabpanel" aria-labelledby="tab-rentbuy">
+          <div class="panel-copy">
+            <span class="panel-tag">Real Estate Decision Engine</span>
+            <h3>Rent or Buy? Compare 15-Year Net Wealth</h3>
+            <p>
+              Stop guessing whether buying a home or renting and investing the surplus builds more wealth. Model property appreciation, down payment, home loan EMI, maintenance, and SIP returns on monthly savings.
+            </p>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Clear headline verdict showing exact net wealth difference in Lakhs/Crores</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Tracks Outstanding Loan vs Property Value at your chosen horizon</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Compares Net Wealth (Buy) vs Net Wealth (Rent &amp; Invest)</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+              Run Rent vs Buy Analysis &rarr;
+            </a>
+          </div>
+          <div class="panel-visual">
+            <img src="assets/phone-rent-buy-cutout.png" alt="Rent or Buy 15-Year Wealth Comparison Screen" width="280" height="588" fetchpriority="low" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Panel 6: Net Worth -->
+        <div class="showcase-panel" id="panel-networth" role="tabpanel" aria-labelledby="tab-networth">
+          <div class="panel-copy">
+            <span class="panel-tag">Zero Bank Linking Required</span>
+            <h3>Track Your Total Net Worth Privately</h3>
+            <p>
+              Log your assets (Investments, Retirement, Cash, Real Estate) and liabilities manually on your device without ever handing over bank passwords, SMS permissions, or AA aggregator consent.
+            </p>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Log periodic snapshots to visualize your Net Worth Progression Trend</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Instant breakdown of Total Assets, Total Liabilities, and Liquid Assets</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Protected by optional biometric / PIN App Lock</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+              Track Net Worth Offline &rarr;
+            </a>
+          </div>
+          <div class="panel-visual">
+            <img src="assets/phone-networth-cutout.png" alt="Track Your Total Net Worth Privately Screen" width="280" height="595" fetchpriority="low" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Panel 7: Export PDF -->
+        <div class="showcase-panel" id="panel-export" role="tabpanel" aria-labelledby="tab-export">
+          <div class="panel-copy">
+            <span class="panel-tag">Client &amp; Advisor Ready</span>
+            <h3>Export Clean PDF &amp; Image Reports</h3>
+            <p>
+              Share calculation summaries with family, clients, chartered accountants, or loan officers in one tap. Choose between a structured 1-page PDF report, a branded result card image, or formatted plain text.
+            </p>
+            <ul class="panel-bullets">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>Export as PDF Report:</strong> Clean 1-page printable breakdown</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>Share as Result Card Image:</strong> High-contrast visual card for WhatsApp/Email</span>
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>Share as Formatted Text:</strong> Instant clipboard copy</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+              Get VeeBee Finance Calculator &rarr;
+            </a>
+          </div>
+          <div class="panel-visual">
+            <img src="assets/phone-export-cutout.png" alt="Export Clean PDF and Image Reports Screen" width="280" height="586" fetchpriority="low" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Complete 6-Card Visual Screenshot Strip -->
+      <div class="gallery-track-wrap">
+        <div class="gallery-scroll">
+          <div class="gallery-card">
+            <div class="gallery-img-frame">
+              <img src="assets/screen-home.png" alt="Home Quick Calculate Screenshot" width="340" height="600" loading="lazy">
+            </div>
+            <div class="gallery-caption">All-in-One Home</div>
+            <div class="gallery-sub">Quick EMI &amp; SIP Sliders</div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-img-frame">
+              <img src="assets/screen-catalog.png" alt="64+ Calculators Light and Dark Mode Screenshot" width="340" height="600" loading="lazy">
+            </div>
+            <div class="gallery-caption">64+ Calculators</div>
+            <div class="gallery-sub">Light &amp; Dark Material 3</div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-img-frame">
+              <img src="assets/screen-tax.png" alt="Income Tax Regime Comparison Screenshot" width="340" height="616" loading="lazy">
+            </div>
+            <div class="gallery-caption">New vs Old Tax</div>
+            <div class="gallery-sub">FY 2026–27 Slab Analysis</div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-img-frame">
+              <img src="assets/screen-rent-buy.png" alt="Rent vs Buy Wealth Comparison Screenshot" width="340" height="600" loading="lazy">
+            </div>
+            <div class="gallery-caption">Rent or Buy?</div>
+            <div class="gallery-sub">15-Yr Net Wealth Verdict</div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="gallery-img-frame">
+              <img src="assets/screen-networth.png" alt="Private Net Worth Tracker Screenshot" width="340" height="600" loading="lazy">
+            </div>
+            <div class="gallery-caption">Private Net Worth</div>
+            <div class="gallery-sub">100% On-Device Snapshots</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Web EMI Calculator Preview -->
+    <section id="live-calculator" class="section-block" style="padding-top: 1rem;">
+      <div class="section-header">
+        <span class="section-eyebrow">Interactive Web Preview</span>
+        <h2 class="section-title">Test the Quick EMI Engine Live</h2>
+        <p class="section-desc">
+          Experience the same instant formula engine used inside the Android app right here in your browser.
+        </p>
+      </div>
+
+      <div class="calc-demo-card">
+        <div class="calc-sliders">
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="loan-amount">Loan Amount</label>
+              <span class="slider-val-badge" id="loan-amount-val">₹ 10,00,000</span>
+            </div>
+            <input type="range" id="loan-amount" class="veebee-slider" min="50000" max="10000000" step="25000" value="1000000" oninput="updateLiveEmi()">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="interest-rate">Interest Rate (% p.a.)</label>
+              <span class="slider-val-badge" id="interest-rate-val">8.5%</span>
+            </div>
+            <input type="range" id="interest-rate" class="veebee-slider" min="5" max="20" step="0.1" value="8.5" oninput="updateLiveEmi()">
+          </div>
+
+          <div class="slider-group" style="margin-bottom: 0;">
+            <div class="slider-header">
+              <label for="loan-tenure">Loan Tenure (Years)</label>
+              <span class="slider-val-badge" id="loan-tenure-val">5 Years (60 Mo)</span>
+            </div>
+            <input type="range" id="loan-tenure" class="veebee-slider" min="1" max="30" step="1" value="5" oninput="updateLiveEmi()">
+          </div>
+        </div>
+
+        <div class="calc-result-box" aria-live="polite">
+          <div class="calc-result-eyebrow">Estimated Monthly EMI</div>
+          <div class="calc-result-emi" id="live-emi-display">₹ 20,517</div>
+
+          <div class="calc-breakdown-grid">
+            <div class="cb-item">
+              <span>Principal Amount</span>
+              <strong id="live-principal-display">₹ 10.00 L</strong>
+            </div>
+            <div class="cb-item">
+              <span>Total Interest Payable</span>
+              <strong id="live-interest-display">₹ 2.31 L</strong>
+            </div>
+            <div class="cb-item">
+              <span>Total Repayment</span>
+              <strong id="live-total-display">₹ 12.31 L</strong>
+            </div>
+            <div class="cb-item">
+              <span>Interest Share</span>
+              <strong id="live-share-display">18.8% of total</strong>
+            </div>
+          </div>
+
+          <div class="progress-ratio-bar" aria-hidden="true">
+            <div class="ratio-principal" id="bar-principal" style="width: 81.2%;"></div>
+            <div class="ratio-interest" id="bar-interest" style="width: 18.8%;"></div>
+          </div>
+          <div class="ratio-legend">
+            <span id="legend-principal">● Principal (81.2%)</span>
+            <span id="legend-interest">● Interest (18.8%)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio App Ecosystem Catalog (Multi-App Organization Portfolio) -->
+    <section id="apps" class="section-block">
+      <div class="section-header">
+        <span class="section-eyebrow">VeeBee Code Apps Studio</span>
+        <h2 class="section-title">Our Android Application Suite</h2>
+        <p class="section-desc">
+          VeeBee Code Apps is a multi-product Android studio. Every app we ship follows the same commitment: offline-first speed, zero mandatory accounts, and honest pricing.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- App 1: VeeBee Finance Calculator (Flagship Span 12) -->
+        <div class="bento-card col-span-12 flagship-card">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-              <div class="bento-icon" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); color: #c084fc;">🎯</div>
-              <span class="sim-pill" style="font-size: 0.75rem; background: rgba(168, 85, 247, 0.12); color: #c084fc; border-color: rgba(168, 85, 247, 0.25);">
-                In Development
-              </span>
+            <div class="app-header-row">
+              <div class="app-identity">
+                <img src="assets/fincalc-icon.png" alt="VeeBee Finance Calculator App Icon" class="app-icon-img" width="58" height="58" loading="lazy">
+                <div>
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--brand-primary); text-transform: uppercase; letter-spacing: 0.05em;">Flagship Release • com.veebee.fincalc</span>
+                  <h3 style="margin-bottom: 0; font-size: 1.55rem;">VeeBee: Finance Calculator</h3>
+                </div>
+              </div>
+              <span class="status-pill status-live">● Live on Google Play</span>
+            </div>
+
+            <p style="font-size: 1.02rem; color: var(--text-secondary);">
+              A complete personal finance, loan, investment, and Indian tax toolkit in a lightweight native package. Calculate EMIs, compare New vs Old tax regimes, evaluate Rent vs Buy scenarios, track financial goals, and log your private net worth without connecting your bank account.
+            </p>
+
+            <div class="chip-cloud" style="margin-bottom: 1.6rem;">
+              <span class="chip chip-brand">64+ Financial Calculators</span>
+              <span class="chip chip-brand">FY 2026–27 Income Tax</span>
+              <span class="chip">100% Offline SQLite</span>
+              <span class="chip">PDF &amp; Image Reports</span>
+              <span class="chip">Net Worth &amp; Goal Tracker</span>
+              <span class="chip">Biometric App Lock</span>
+            </div>
+
+            <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+              <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener" class="btn btn-primary">
+                Install from Google Play &rarr;
+              </a>
+              <a href="FinanceCalculator.apk" class="btn btn-secondary">
+                Download Direct APK
+              </a>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center;">
+            <img src="assets/screen-emi-sip.png" alt="VeeBee Finance Calculator EMI and SIP preview" width="320" height="448" style="max-width: 100%; height: auto; border-radius: 20px;" loading="lazy">
+          </div>
+        </div>
+
+        <!-- App 2: VeeBee Focus & Habits -->
+        <div class="bento-card col-span-4">
+          <div>
+            <div class="app-header-row">
+              <div class="app-icon-box" style="background: var(--brand-purple-bg); color: var(--brand-purple);">
+                <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <span class="status-pill status-dev">In Development</span>
             </div>
             <h3>VeeBee: Focus &amp; Habits</h3>
             <p>
-              Minimalist daily routine and deep-work interval timer. Designed without social feeds, gamified spam, or accounts. Track habits locally with pure privacy.
+              Distraction-free Pomodoro work timer and daily routine tracker. Built without social feeds, noisy streak penalties, or cloud sign-ins — featuring local contribution heatmaps and home screen widgets.
             </p>
           </div>
           <div class="chip-cloud">
-            <span class="chip">Pomodoro Intervals</span>
+            <span class="chip">Deep-Work Timer</span>
             <span class="chip">Offline Heatmaps</span>
             <span class="chip">Zero Telemetry</span>
           </div>
         </div>
 
-        <!-- App 3: Privacy Notes & Vault Pipeline -->
-        <div class="bento-card">
+        <!-- App 3: VeeBee Secure Vault -->
+        <div class="bento-card col-span-4">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-              <div class="bento-icon" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">🔒</div>
-              <span class="sim-pill" style="font-size: 0.75rem; background: rgba(148, 163, 184, 0.12); color: #94a3b8; border-color: rgba(148, 163, 184, 0.25);">
-                In Pipeline
-              </span>
+            <div class="app-header-row">
+              <div class="app-icon-box" style="background: var(--brand-emerald-bg); color: var(--brand-emerald);">
+                <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <span class="status-pill status-pipeline">In Pipeline</span>
             </div>
             <h3>VeeBee: Secure Vault</h3>
             <p>
-              Hardware-backed local encrypted storage for sensitive notes, passwords, and documents. Uses Android KeyStore and biometric authentication.
+              Hardware-backed local encrypted locker for sensitive personal notes, ID cards, and documents. Powered by Android KeyStore AES-256-GCM encryption and device biometrics.
             </p>
           </div>
           <div class="chip-cloud">
             <span class="chip">AES-256 GCM</span>
             <span class="chip">Android KeyStore</span>
-            <span class="chip">Biometric Lock</span>
+            <span class="chip">Air-Gapped Storage</span>
           </div>
         </div>
 
-        <!-- Card 4: Architecture Commitment (Span 2) -->
-        <div class="bento-card span-2">
+        <!-- App 4: VeeBee Wear & Media Labs -->
+        <div class="bento-card col-span-4">
           <div>
-            <div class="bento-icon">⚙️</div>
-            <h3>Unified Native Android Engineering</h3>
+            <div class="app-header-row">
+              <div class="app-icon-box" style="background: var(--brand-amber-bg); color: var(--brand-amber);">
+                <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <span class="status-pill status-pipeline">Studio Labs</span>
+            </div>
+            <h3>VeeBee: Companion Tools</h3>
             <p>
-              Every application published by VeeBee Code Apps adheres to Google's Modern Android Development (MAD) standards. Built with Kotlin, Jetpack Compose, Coroutines, and local SQLite persistence — guaranteeing snappy 120Hz frame rates and long-term operating system compatibility.
+              Fast, battery-conscious Android &amp; Wear OS utility tools engineered with Jetpack Compose and Kotlin Coroutines for instant glanceable information.
             </p>
           </div>
           <div class="chip-cloud">
-            <span class="chip">100% Kotlin 2.0</span>
-            <span class="chip">Jetpack Compose UI</span>
-            <span class="chip">Material You Dynamic</span>
-            <span class="chip">Sub-100ms Startup</span>
+            <span class="chip">Kotlin 2.0</span>
+            <span class="chip">Jetpack Compose</span>
+            <span class="chip">Wear OS &amp; Phone</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Studio Standards / Philosophy -->
-    <section id="philosophy" class="features" style="padding-top: 0;">
-      <div class="section-title-wrap">
-        <div class="section-eyebrow">Studio Principles</div>
-        <h2 class="section-title">How We Build Software</h2>
-        <p class="section-desc">The four core engineering pillars shared across all VeeBee applications.</p>
+    <!-- Why Choose VeeBee Code Apps (PayRupik-Inspired 6-Card Value Proposition) -->
+    <section id="why-veebee" class="section-block" style="padding-top: 1rem;">
+      <div class="section-header">
+        <span class="section-eyebrow">Studio Architecture</span>
+        <h2 class="section-title">Why Users Trust VeeBee Code Apps</h2>
+        <p class="section-desc">
+          We build utility apps the way we want to use them on our own phones — private, fast, and transparent.
+        </p>
       </div>
 
-      <div class="bento-grid">
-        <div class="bento-card">
-          <div class="bento-icon">🛡️</div>
-          <h3>Privacy by Architecture</h3>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3>Zero Data Harvesting</h3>
           <p>
-            Your inputs, calculations, and personal documents never leave your physical device. We do not run tracking servers, user profiling databases, or invasive background listeners.
+            Your salary figures, net worth entries, loan plans, and goals stay strictly on your handset. We never ask for your name, phone number, PAN, Aadhaar, or contacts.
           </p>
         </div>
 
-        <div class="bento-card">
-          <div class="bento-icon">⚡</div>
-          <h3>Zero Subscription Fatigue</h3>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>No Subscription Fatigue</h3>
           <p>
-            We reject predatory monthly micro-charges on basic utility tools. Our apps are free to use with optional, transparent, one-time lifetime upgrades that you own forever.
+            All 64 calculators work for free. Need ad-free usage and unlimited saved items? Upgrade once with a single lifetime purchase via Google Play Billing — never a recurring monthly charge.
           </p>
         </div>
 
-        <div class="bento-card">
-          <div class="bento-icon">🔋</div>
-          <h3>Offline-First Independence</h3>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>Tailored for India &amp; Global Currencies</h3>
           <p>
-            No network? No problem. Core calculations, note taking, and productivity workflows function completely offline without chewing battery or requiring Wi-Fi.
+            Native support for Indian Lakhs/Crores formatting, PPF, EPF, SSY, NPS, SCSS, Post Office schemes, and FY 2026–27 Income Tax slabs, alongside multi-currency preferences.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414"/>
+            </svg>
+          </div>
+          <h3>100% Offline Reliability</h3>
+          <p>
+            Every calculation, chart, amortization schedule, and net worth snapshot runs locally on your device processor — even on an airplane or without mobile data.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3>Instant PDF &amp; Image Reports</h3>
+          <p>
+            Export any calculation as a clean, client-ready 1-page PDF document or branded summary card image to share over WhatsApp, email, or print.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3>Modern Native Engineering</h3>
+          <p>
+            Built 100% in Kotlin 2.0 and Jetpack Compose with Material 3 design tokens — delivering smooth 120Hz scrolling, tiny app size, and minimal battery drain.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Organization Verification & Trust Strip -->
-    <section id="trust" class="trust-strip">
+    <!-- Frequently Asked Questions (PayRupik + Persuade Pattern) -->
+    <section id="faq" class="section-block" style="padding-top: 1rem;">
+      <div class="section-header">
+        <span class="section-eyebrow">Questions &amp; Answers</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">
+          Everything you need to know about VeeBee: Finance Calculator, data privacy, and our studio policies.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item is-open">
+          <button type="button" class="faq-trigger" aria-expanded="true" onclick="toggleFaq(this)">
+            <span>1. Does VeeBee: Finance Calculator require an account, login, or PAN number?</span>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. VeeBee: Finance Calculator works immediately after installation without sign-up, phone number verification, or personal identity details. All saved calculations, goals, and net worth logs stay strictly inside your phone's local SQLite storage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>2. What is included in the Free plan versus the Pro Lifetime Upgrade?</span>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            All 64+ financial calculators, interactive charts, light/dark themes, App Lock, and local backup/restore are available for everyone. The Free tier supports up to 10 saved calculations, 2 financial goals, 6 combined net worth items, and 2 payment reminders (supported by Google AdMob). The one-time <strong>Pro Lifetime Upgrade</strong> removes all ads permanently and enables unlimited saved calculations, goals, net worth items, reminders, and instant PDF exports.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>3. Are the Indian Income Tax slabs and government scheme rates updated for FY 2026–27?</span>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Yes. The Income Tax Calculator supports side-by-side comparison of the New Tax Regime (Default) and Old Tax Regime for FY 2026–27, FY 2025–26, and FY 2024–25, including Section 87A rebates, standard deductions, and slab-wise breakdowns, alongside PPF, EPF, SSY, NPS, and Post Office schemes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>4. Does VeeBee Code Apps offer loans, credit, or investment brokerage?</span>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. VeeBee Code Apps is an independent software engineering studio. Our apps are strictly mathematical calculation and personal planning utilities for education and illustration. We are not a bank, NBFC, lender, or financial advisor, and we never link to your bank accounts.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Organization Credentials Strip -->
+    <section id="trust" class="trust-strip" aria-label="Organization Verification Details">
       <div class="trust-item">
         <h4>Developer Organization</h4>
         <div class="trust-val">VEEBEE CODE APPS</div>
-        <div class="trust-sub">Sole Proprietorship Entity</div>
+        <div class="trust-sub">Verified Android Studio</div>
       </div>
       <div class="trust-item">
         <h4>Govt of India MSME</h4>
@@ -224,7 +894,7 @@
       <div class="trust-item">
         <h4>Headquarters</h4>
         <div class="trust-val">Bengaluru, India</div>
-        <div class="trust-sub">Koramangala 1st Block</div>
+        <div class="trust-sub">Koramangala 1st Block, 560034</div>
       </div>
     </section>
 
@@ -235,38 +905,39 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h4>VeeBee Code Apps</h4>
+          <img src="assets/logo-full.png" alt="VeeBee Code Apps Logo" class="footer-brand-logo" width="104" height="52" loading="lazy">
           <p>
-            Independent mobile software engineering studio based in Bengaluru, Karnataka, India. Creating robust, offline-first applications for Android.
+            Independent Android application engineering studio based in Bengaluru, Karnataka, India. Building high-precision, offline-first software that respects user privacy.
           </p>
         </div>
 
         <div class="footer-col">
-          <h5>App Suite</h5>
+          <h5>App Ecosystem</h5>
           <ul>
-            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener">Finance Calculator</a></li>
-            <li><a href="FinanceCalculator.apk">Download APK</a></li>
-            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps" target="_blank" rel="noopener">Developer Profile ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc" target="_blank" rel="noopener">VeeBee: Finance Calculator</a></li>
+            <li><a href="FinanceCalculator.apk">Download Direct APK</a></li>
+            <li><a href="#live-calculator">Web EMI Calculator</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps" target="_blank" rel="noopener">Google Play Developer Page ↗</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Legal &amp; Policies</h5>
+          <h5>Legal &amp; Compliance</h5>
           <ul>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
             <li><a href="disclaimer.html">Financial Disclaimer</a></li>
-            <li><a href="app-ads.txt">app-ads.txt</a></li>
+            <li><a href="app-ads.txt">app-ads.txt (AdMob Verified)</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Developer Office</h5>
+          <h5>Studio Office</h5>
           <ul>
             <li><a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a></li>
-            <li><a href="https://veebeecodes.me">veebeecodes.me</a></li>
-            <li style="color: var(--text-dim); font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
-              502, Tumbida Mane, 1st Block, Koramangala 2nd Main, Bengaluru, Karnataka 560034
+            <li><a href="https://veebeecodes.me">https://veebeecodes.me</a></li>
+            <li style="color: var(--text-dim); font-size: 0.84rem; margin-top: 0.4rem; line-height: 1.55;">
+              502, Tumbida Mane, 1st Block, Koramangala 2nd Main, Bengaluru, Karnataka 560034, India
             </li>
           </ul>
         </div>
@@ -274,20 +945,125 @@
 
       <div class="footer-bottom">
         <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
-        <div>Registered with MSME, Govt of India &bull; Verified Google Play Publisher</div>
+        <div>MSME Reg: UDYAM-KR-03-0744371 &bull; D-U-N-S® 311849217</div>
       </div>
     </div>
   </footer>
 
+  <!-- Interactive UI Controls (Mobile Nav, Tabs, FAQ, Live EMI Engine) -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('nav-links');
-      if (menu) menu.classList.toggle('is-open');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
     }
+
     function closeMenu() {
       const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
       if (menu) menu.classList.remove('is-open');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     }
+
+    function switchTab(key) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.showcase-panel');
+      tabs.forEach(t => {
+        const isMatch = t.id === 'tab-' + key;
+        t.classList.toggle('is-active', isMatch);
+        t.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+      panels.forEach(p => {
+        p.classList.toggle('is-active', p.id === 'panel-' + key);
+      });
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    function formatIndianShort(num) {
+      if (num >= 10000000) {
+        return '₹ ' + (num / 10000000).toFixed(2) + ' Cr';
+      }
+      if (num >= 100000) {
+        return '₹ ' + (num / 100000).toFixed(2) + ' L';
+      }
+      return '₹ ' + Math.round(num).toLocaleString('en-IN');
+    }
+
+    function updateLiveEmi() {
+      const P = parseFloat(document.getElementById('loan-amount').value);
+      const annualRate = parseFloat(document.getElementById('interest-rate').value);
+      const years = parseInt(document.getElementById('loan-tenure').value, 10);
+
+      const months = years * 12;
+      const r = annualRate / 12 / 100;
+
+      const emi = r === 0
+        ? P / months
+        : (P * r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
+
+      const totalPayment = emi * months;
+      const totalInterest = totalPayment - P;
+      const interestPct = ((totalInterest / totalPayment) * 100).toFixed(1);
+      const principalPct = (100 - parseFloat(interestPct)).toFixed(1);
+
+      document.getElementById('loan-amount-val').textContent = '₹ ' + P.toLocaleString('en-IN');
+      document.getElementById('interest-rate-val').textContent = annualRate.toFixed(1) + '%';
+      document.getElementById('loan-tenure-val').textContent = years + (years === 1 ? ' Year (' : ' Years (') + months + ' Mo)';
+
+      document.getElementById('live-emi-display').textContent = '₹ ' + Math.round(emi).toLocaleString('en-IN');
+      document.getElementById('live-principal-display').textContent = formatIndianShort(P);
+      document.getElementById('live-interest-display').textContent = formatIndianShort(totalInterest);
+      document.getElementById('live-total-display').textContent = formatIndianShort(totalPayment);
+      document.getElementById('live-share-display').textContent = interestPct + '% of total';
+
+      document.getElementById('bar-principal').style.width = principalPct + '%';
+      document.getElementById('bar-interest').style.width = interestPct + '%';
+      document.getElementById('legend-principal').textContent = '● Principal (' + principalPct + '%)';
+      document.getElementById('legend-interest').textContent = '● Interest (' + interestPct + '%)';
+    }
+  </script>
+
+  <!-- FALLBACK: vendor/pretext.js missing, using CDN -->
+  <script type="module">
+    import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
+
+    await document.fonts.ready;
+    const elements = document.querySelectorAll('[data-pretext]');
+    const prepared = new Map();
+
+    for (const el of elements) {
+      const text = el.textContent.trim();
+      const font = getComputedStyle(el).font;
+      if (text && font) {
+        prepared.set(el, prepare(text, font));
+      }
+    }
+
+    function relayout() {
+      for (const [el, handle] of prepared) {
+        if (el.clientWidth > 0) {
+          const lh = parseFloat(getComputedStyle(el).lineHeight);
+          if (!Number.isNaN(lh) && lh > 0) {
+            const { height } = layout(handle, el.clientWidth, lh);
+            if (height > 0) {
+              el.style.minHeight = `${height}px`;
+            }
+          }
+        }
+      }
+    }
+
+    new ResizeObserver(() => relayout()).observe(document.body);
+    relayout();
   </script>
 </body>
 </html>
