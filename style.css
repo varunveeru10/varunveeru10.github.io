@@ -1022,7 +1022,7 @@ header, header.floating-header {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   gap: 2.75rem;
-  align-items: center;
+  align-items: start;
 }
 
 .slider-group {
@@ -1590,6 +1590,8 @@ input[type="range"].veebee-slider::-moz-range-thumb {
   border-radius: var(--radius-lg);
   padding: 3rem;
   box-shadow: var(--shadow-sm);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .doc-content h1 {
@@ -1621,6 +1623,7 @@ input[type="range"].veebee-slider::-moz-range-thumb {
   font-size: 0.98rem;
   color: var(--text-secondary);
   line-height: 1.72;
+  overflow-wrap: break-word;
 }
 
 .doc-content p {
@@ -1641,6 +1644,7 @@ input[type="range"].veebee-slider::-moz-range-thumb {
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
+  overflow-wrap: break-word;
 }
 
 .doc-content code {
@@ -1650,6 +1654,8 @@ input[type="range"].veebee-slider::-moz-range-thumb {
   color: var(--brand-primary);
   padding: 0.15rem 0.45rem;
   border-radius: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* ==========================================================================
@@ -2046,6 +2052,30 @@ footer a:hover {
   gap: 0.6rem;
 }
 
+.calc-val-input {
+  width: auto;
+  min-width: 140px;
+  max-width: 175px;
+  padding: 0.42rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  background: #FFFFFF;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.calc-val-input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
 .calc-number-input {
   width: 130px;
   padding: 0.38rem 0.65rem;
@@ -2064,6 +2094,23 @@ footer a:hover {
   outline: none;
   border-color: var(--brand-primary);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.savings-callout {
+  background: #FFFFFF !important;
+  color: #0A192F !important;
+  border-left: 4px solid var(--brand-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0.85rem 1.15rem !important;
+  margin-top: 1.15rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+  line-height: 1.5 !important;
+}
+
+.savings-callout strong {
+  color: #0A192F !important;
 }
 
 /* Tax Calculator Specific Styles */
@@ -2231,6 +2278,52 @@ footer a:hover {
   }
   .calc-number-input {
     width: 105px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .calc-presets-bar {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+  .calc-preset-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  .preset-chip {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    border-radius: var(--radius-sm) !important;
+  }
+  .tax-toggle-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    border-radius: var(--radius-md) !important;
+    background: var(--bg-ice) !important;
+    padding: 0.35rem !important;
+    gap: 0.35rem !important;
+  }
+  .tax-toggle-btn {
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 0.6rem 0.85rem !important;
+    font-size: 0.84rem !important;
+  }
+  .calc-val-input {
+    min-width: 120px;
+    max-width: 145px;
+    font-size: 0.88rem;
+    padding: 0.38rem 0.6rem;
+  }
+  .slider-header label {
     font-size: 0.85rem;
   }
 }

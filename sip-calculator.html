@@ -100,24 +100,23 @@
       </button>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html#hero">Overview</a></li>
-        <li><a href="index.html#flagship">Flagship App</a></li>
+        <li><a href="index.html#showcase">Flagship App</a></li>
         <li class="nav-dropdown">
           <a href="sip-calculator.html" class="nav-dropdown-toggle active" aria-current="page">Calculators ▾</a>
           <ul class="nav-dropdown-menu">
             <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
-            <li><a href="sip-calculator.html" class="active">SIP Calculator</a></li>
+            <li><a href="sip-calculator.html" class="active">SIP Return Calculator</a></li>
             <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
           </ul>
         </li>
-        <li><a href="index.html#suite">Application Suite</a></li>
-        <li><a href="index.html#why-trust">Why Us</a></li>
+        <li><a href="index.html#live-calculator">Live Calculator</a></li>
+        <li><a href="index.html#apps">App Suite</a></li>
+        <li><a href="index.html#why-veebee">Principles</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dsip_calc_header" class="nav-cta" target="_blank" rel="noopener">
-            <svg class="nav-gp-icon" viewBox="0 0 500 500" width="16" height="16" aria-hidden="true">
-              <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
-            </svg>
+            <img src="assets/google-play-white.png" alt="" width="14" height="17" class="gp-icon-img" aria-hidden="true">
             <span>Get on Google Play</span>
           </a>
         </li>
@@ -142,7 +141,7 @@
       <span class="section-eyebrow">Investment &amp; Wealth Planner</span>
       <h1 class="section-title" style="font-size: 2.25rem;">SIP Calculator — Mutual Fund Wealth Growth Planner</h1>
       <p class="section-desc" style="margin-inline: 0; max-width: 760px;">
-        Discover how regular monthly investments compound over time. Calculate your expected maturity corpus, total capital invested, and net capital gain using exact monthly advance compounding.
+        Discover how regular monthly investments compound over time. Calculate your expected maturity corpus, total capital invested, and net capital gain using exact monthly advance compounding. Your inputs never leave your browser.
       </p>
     </div>
 
@@ -163,13 +162,10 @@
           <!-- Monthly Investment -->
           <div class="slider-group">
             <div class="slider-header">
-              <label for="input-monthly-num">Monthly Investment (₹)</label>
-              <div class="calc-input-row">
-                <input type="number" id="input-monthly-num" class="calc-number-input" min="500" max="10000000" step="500" value="10000" oninput="syncMonthly(this.value)">
-                <span class="slider-val-badge" id="badge-monthly">₹ 10,000 / mo</span>
-              </div>
+              <label for="input-monthly-val">Monthly Investment (₹)</label>
+              <input type="text" id="input-monthly-val" class="calc-val-input" value="₹ 10,000" oninput="parseMonthlyInput(this.value)" onblur="blurMonthlyInput(this.value)" aria-label="Monthly Investment">
             </div>
-            <input type="range" id="slider-monthly" class="veebee-slider" min="500" max="100000" step="500" value="10000" oninput="syncMonthly(this.value)">
+            <input type="range" id="slider-monthly" class="veebee-slider" min="500" max="100000" step="500" value="10000" oninput="syncMonthlySlider(this.value)">
             <div class="slider-scale">
               <span>₹ 500</span>
               <span>₹ 25K</span>
@@ -181,13 +177,10 @@
           <!-- Expected Annual Return Rate -->
           <div class="slider-group">
             <div class="slider-header">
-              <label for="input-return-num">Expected Return Rate (% p.a.)</label>
-              <div class="calc-input-row">
-                <input type="number" id="input-return-num" class="calc-number-input" min="1.0" max="30.0" step="0.1" value="12.0" oninput="syncReturn(this.value)">
-                <span class="slider-val-badge" id="badge-return">12.0%</span>
-              </div>
+              <label for="input-return-val">Expected Return Rate (% p.a.)</label>
+              <input type="text" id="input-return-val" class="calc-val-input" value="12.0%" oninput="parseReturnInput(this.value)" onblur="blurReturnInput(this.value)" aria-label="Expected Return Rate">
             </div>
-            <input type="range" id="slider-return" class="veebee-slider" min="1.0" max="30.0" step="0.1" value="12.0" oninput="syncReturn(this.value)">
+            <input type="range" id="slider-return" class="veebee-slider" min="1.0" max="30.0" step="0.1" value="12.0" oninput="syncReturnSlider(this.value)">
             <div class="slider-scale">
               <span>1%</span>
               <span>10%</span>
@@ -199,13 +192,10 @@
           <!-- Time Horizon -->
           <div class="slider-group" style="margin-bottom: 0;">
             <div class="slider-header">
-              <label for="input-tenure-num">Investment Period (Years)</label>
-              <div class="calc-input-row">
-                <input type="number" id="input-tenure-num" class="calc-number-input" min="1" max="40" step="1" value="10" oninput="syncTenure(this.value)">
-                <span class="slider-val-badge" id="badge-tenure">10 Yrs (120 Mo)</span>
-              </div>
+              <label for="input-tenure-val">Investment Period (Years)</label>
+              <input type="text" id="input-tenure-val" class="calc-val-input" value="10 Yrs" oninput="parseTenureInput(this.value)" onblur="blurTenureInput(this.value)" aria-label="Investment Period">
             </div>
-            <input type="range" id="slider-tenure" class="veebee-slider" min="1" max="40" step="1" value="10" oninput="syncTenure(this.value)">
+            <input type="range" id="slider-tenure" class="veebee-slider" min="1" max="40" step="1" value="10" oninput="syncTenureSlider(this.value)">
             <div class="slider-scale">
               <span>1 Yr</span>
               <span>10 Yrs</span>
@@ -351,7 +341,7 @@
             </svg>
           </button>
           <div class="faq-answer">
-            No. This web page calculates results on your browser processor without saving or transmitting information. To save multiple SIP plans, track your overall private net worth, and set target milestones offline, download our Android application.
+            No. Your inputs never leave your browser. This web page calculates results entirely on your device with zero network transmission. To save multiple SIP plans, track your overall private net worth, and set target milestones offline, download our Android application.
           </div>
         </div>
       </div>
@@ -362,7 +352,7 @@
       <div class="calc-app-cta-text">
         <h3>Save results, export PDF reports and track goals in the app</h3>
         <p>
-          Model step-up annual SIP increases, inflation-adjusted corpus requirements, and private retirement milestones on your Android device with <strong>VeeBee: Finance Calculator</strong>. 100% private with no login required.
+          Model step-up annual SIP increases, inflation-adjusted corpus requirements, and private retirement milestones on your Android device with <strong>VeeBee: Finance Calculator</strong>. Data stays on your device with no login required.
         </p>
       </div>
       <div>
@@ -461,6 +451,10 @@
       }
     }
 
+    let monthlyInvestment = 10000;
+    let expectedReturnRate = 12.0;
+    let tenureYears = 10;
+
     function formatInr(val) {
       return new Intl.NumberFormat('en-IN', {
         style: 'currency',
@@ -469,19 +463,73 @@
       }).format(Math.round(val));
     }
 
-    function formatLakhs(val) {
-      if (val >= 10000000) return '₹ ' + (val / 10000000).toFixed(2) + ' Cr';
-      if (val >= 100000) return '₹ ' + (val / 100000).toFixed(2) + ' L';
-      return formatInr(val);
+    function parseInr(val) {
+      if (typeof val === 'number') return val;
+      const cleaned = String(val).replace(/[^0-9.]/g, '');
+      return parseFloat(cleaned) || 0;
+    }
+
+    function parseMonthlyInput(val) {
+      monthlyInvestment = Math.max(0, parseInr(val));
+      document.getElementById('slider-monthly').value = Math.min(monthlyInvestment, 100000);
+      calculateSip();
+    }
+
+    function blurMonthlyInput(val) {
+      monthlyInvestment = Math.max(0, parseInr(val));
+      document.getElementById('input-monthly-val').value = formatInr(monthlyInvestment);
+      calculateSip();
+    }
+
+    function syncMonthlySlider(val) {
+      monthlyInvestment = parseFloat(val) || 0;
+      document.getElementById('input-monthly-val').value = formatInr(monthlyInvestment);
+      calculateSip();
+    }
+
+    function parseReturnInput(val) {
+      expectedReturnRate = Math.max(0.1, Math.min(30, parseInr(val)));
+      document.getElementById('slider-return').value = expectedReturnRate;
+      calculateSip();
+    }
+
+    function blurReturnInput(val) {
+      expectedReturnRate = Math.max(0.1, Math.min(30, parseInr(val)));
+      document.getElementById('input-return-val').value = expectedReturnRate.toFixed(1) + '%';
+      calculateSip();
+    }
+
+    function syncReturnSlider(val) {
+      expectedReturnRate = parseFloat(val) || 0;
+      document.getElementById('input-return-val').value = expectedReturnRate.toFixed(1) + '%';
+      calculateSip();
+    }
+
+    function parseTenureInput(val) {
+      tenureYears = Math.max(1, Math.min(40, Math.round(parseInr(val))));
+      document.getElementById('slider-tenure').value = tenureYears;
+      calculateSip();
+    }
+
+    function blurTenureInput(val) {
+      tenureYears = Math.max(1, Math.min(40, Math.round(parseInr(val))));
+      document.getElementById('input-tenure-val').value = tenureYears + ' Yrs';
+      calculateSip();
+    }
+
+    function syncTenureSlider(val) {
+      tenureYears = parseFloat(val) || 0;
+      document.getElementById('input-tenure-val').value = tenureYears + ' Yrs';
+      calculateSip();
     }
 
     function calculateSip() {
-      const p = parseFloat(document.getElementById('input-monthly-num').value) || 0;
-      const rateAnnual = parseFloat(document.getElementById('input-return-num').value) || 0;
-      const tenureYears = parseFloat(document.getElementById('input-tenure-num').value) || 0;
+      const p = monthlyInvestment;
+      const rateAnnual = expectedReturnRate;
+      const years = tenureYears;
 
       const monthlyRate = rateAnnual / 12 / 100;
-      const totalMonths = Math.round(tenureYears * 12);
+      const totalMonths = Math.round(years * 12);
 
       let corpus = 0;
       for (let m = 1; m <= totalMonths; m++) {
@@ -505,36 +553,21 @@
       document.getElementById('bar-gain').style.width = returnsPct.toFixed(1) + '%';
       document.getElementById('legend-invested').textContent = '● Invested (' + investedPct.toFixed(1) + '%)';
       document.getElementById('legend-gain').textContent = '● Capital Gain (' + returnsPct.toFixed(1) + '%)';
-
-      document.getElementById('badge-monthly').textContent = formatInr(p) + ' / mo';
-      document.getElementById('badge-return').textContent = rateAnnual.toFixed(1) + '%';
-      document.getElementById('badge-tenure').textContent = tenureYears + ' Yrs (' + totalMonths + ' Mo)';
-    }
-
-    function syncMonthly(val) {
-      document.getElementById('slider-monthly').value = val;
-      document.getElementById('input-monthly-num').value = val;
-      calculateSip();
-    }
-
-    function syncReturn(val) {
-      document.getElementById('slider-return').value = val;
-      document.getElementById('input-return-num').value = val;
-      calculateSip();
-    }
-
-    function syncTenure(val) {
-      document.getElementById('slider-tenure').value = val;
-      document.getElementById('input-tenure-num').value = val;
-      calculateSip();
     }
 
     function setSipPreset(p, r, t, chip) {
       document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('is-active'));
       chip.classList.add('is-active');
-      syncMonthly(p);
-      syncReturn(r);
-      syncTenure(t);
+      monthlyInvestment = p;
+      expectedReturnRate = r;
+      tenureYears = t;
+      document.getElementById('slider-monthly').value = Math.min(p, 100000);
+      document.getElementById('input-monthly-val').value = formatInr(p);
+      document.getElementById('slider-return').value = r;
+      document.getElementById('input-return-val').value = r.toFixed(1) + '%';
+      document.getElementById('slider-tenure').value = t;
+      document.getElementById('input-tenure-val').value = t + ' Yrs';
+      calculateSip();
     }
 
     document.addEventListener('DOMContentLoaded', calculateSip);
