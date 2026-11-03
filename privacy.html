@@ -36,7 +36,7 @@
   <main id="main-content" class="container">
     <div class="doc-content">
       <h1>Privacy Policy</h1>
-      <div class="doc-meta">Last updated: October 9, 2026</div>
+      <div class="doc-meta">Last updated: November 3, 2026</div>
 
       <p>
         This Privacy Policy explains how <strong>VeeBee Code Apps</strong> ("we", "us", "our"), Bangalore, Karnataka, India, handles information in the <strong>Finance Calculator</strong> mobile app (package <code>com.veebee.fincalc</code>, "the App") and on our website <a href="https://veebeecodes.me">https://veebeecodes.me</a> ("the Website").
@@ -44,83 +44,92 @@
 
       <h2>1. Summary</h2>
       <ul>
-        <li>The App needs no account, login or sign-up.</li>
-        <li>The numbers you type into calculators, your saved calculations, goals, net worth entries, reminders and settings stay on your device. We do not receive them.</li>
-        <li>We do not ask for your name, PAN, Aadhaar, bank details or contacts.</li>
-        <li>The App shows ads (Google AdMob) unless you buy Pro. Ad providers may collect certain device and advertising data, described below.</li>
+        <li>The App requires no account, registration, login or sign-up.</li>
+        <li>Your financial inputs, salary, loans, assets, goals, net worth logs and notes stay exclusively on your device in local SQLite storage. We have no servers and cannot access your data.</li>
+        <li>We do not collect your name, email, PAN, Aadhaar, bank details, contacts, or documents.</li>
+        <li>The free version shows ads served by Google AdMob, which may collect your device advertising ID and technical identifiers. Upgrading to Pro permanently removes all ads.</li>
       </ul>
 
-      <h2>2. Information stored on your device only</h2>
+      <h2>2. Information Stored on Your Device Only</h2>
       <p>
-        Calculator inputs and results, saved calculations, favourites, goals, net worth entries, reminders, theme and currency preferences, and your Pro status. This data is not sent to us. Uninstalling the App or using "Clear all" in Settings deletes it. Backup exports and PDFs you create are saved or shared only where you choose.
+        All calculations, history, bookmarks, financial goals, net worth asset/liability records, bill reminders, theme choices, and local security preferences are stored locally in an on-device SQLite database.
       </p>
+      <ul>
+        <li><strong>Free Tier Capacity:</strong> Stores up to 10 saved calculations, 2 financial goals, 6 net worth items, and 2 payment reminders locally.</li>
+        <li><strong>Pro Lifetime Capacity:</strong> Unlocks unlimited saved calculations, goals, net worth items, and reminders.</li>
+        <li><strong>Local Backup &amp; Restore:</strong> You can export an encrypted/structured JSON backup file of your data. The backup file is saved directly to your device storage or shared via Android's native sharesheet only to destinations you select.</li>
+        <li><strong>Data Deletion:</strong> Uninstalling the App or clearing app storage in your Android device settings instantly and permanently deletes all locally stored data.</li>
+      </ul>
 
-      <h2>3. Information collected by third-party services</h2>
+      <h2>3. Third-Party Services &amp; SDKs</h2>
       <ul>
         <li>
-          <strong>Google AdMob (ads):</strong> may collect your advertising ID, IP address, device and app information, and ad interaction data, to show and measure ads and prevent fraud. In the EEA, UK and other regions where required, we ask for your consent through Google's consent form. You can change your choice under Settings (Privacy options) and in your device's ad settings. Pro users see no ads. See <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a>
+          <strong>Google AdMob (Advertising):</strong> The free tier uses Google Mobile Ads SDK (<code>play-services-ads</code>) to display banner, interstitial, and rewarded video ads (such as to unlock individual PDF exports). Google AdMob may collect and process device identifiers, advertising ID (AAID), IP address, and diagnostic interaction data to deliver and measure advertisements and prevent fraud. In regions requiring consent (such as the EEA and UK), we present Google's User Messaging Platform (UMP) consent dialogue. You can modify your choices at any time in the App Settings or via your Android device settings (Google &gt; Ads). Pro users see no ads. Learn more at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Privacy</a>.
         </li>
         <li>
-          <strong>Google Play Billing:</strong> payment for Pro is processed entirely by Google Play. We never see your card or bank details. We only learn whether a Pro purchase exists on your Google account.
+          <strong>Google Play In-App Billing:</strong> Upgrades to Pro are processed exclusively through Google Play Billing (<code>billing-ktx</code>). We do not collect, process, or store credit card, debit card, UPI, or banking information. We only verify the cryptographic purchase token with Google Play to activate your Pro license.
         </li>
         <li>
-          <strong>Currency Converter:</strong> the App fetches public exchange rates from an online exchange rate service. Your amounts are not sent. Normal technical data such as your IP address is visible to that service.
+          <strong>Currency Exchange Rates:</strong> The Currency Converter tool fetches public exchange rate tables over an HTTPS connection. Your conversion amounts and selected currencies remain strictly on your device. If offline, the tool falls back to bundled baseline rates.
         </li>
         <li>
-          <strong>Google Play services</strong> may process data under Google's own Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
+          <strong>Google Play In-App Review:</strong> We use Google's official in-app review library (<code>review-ktx</code>) to prompt for optional Play Store ratings without directing you outside the app.
         </li>
         <li>
-          <strong>Analytics &amp; Crash Reporting:</strong> The App does not use analytics or crash-reporting services.
+          <strong>Zero Cloud Analytics or Cloud Crash SDKs:</strong> The App does not integrate Google Firebase Analytics, Google Firebase Crashlytics, Sentry, Mixpanel, or any third-party telemetry tracker. If an unexpected runtime error occurs, the App creates a local text file (<code>last_crash_report.txt</code>) stored only on your device. This report is only shared if you explicitly choose to tap "Send Diagnostics" and email it to us via your own email client.
         </li>
       </ul>
 
-      <h2>4. Permissions</h2>
+      <h2>4. Device Permissions</h2>
       <ul>
-        <li><strong>Notifications:</strong> to show reminders you create. Reminders are scheduled on your device.</li>
-        <li><strong>Biometric / device lock:</strong> used only to unlock the App on your device. We never receive or store your fingerprint, face or PIN.</li>
-        <li><strong>Internet access:</strong> for ads, Google Play Billing and currency rates.</li>
+        <li><strong>Internet Access (<code>android.permission.INTERNET</code>):</strong> Used exclusively to load AdMob advertisements, verify Google Play Pro purchases, and refresh exchange rates. Core calculations work without internet access.</li>
+        <li><strong>Notifications (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> Required on Android 13 (API 33) and above to display local reminder alerts for recurring bills and SIP schedules scheduled via Android WorkManager. No remote push notifications or marketing notifications are ever sent.</li>
+        <li><strong>Biometric Authentication (<code>android.permission.USE_BIOMETRIC</code>):</strong> Enables optional App Lock using your device's fingerprint or face unlock via AndroidX Biometric. Authentication occurs entirely within the Android secure hardware enclave; the App never accesses or stores your raw biometric data.</li>
+        <li><strong>In-App Billing (<code>com.android.vending.BILLING</code>):</strong> Enables the optional one-time Pro lifetime purchase via Google Play.</li>
       </ul>
 
-      <h2>5. How we use information</h2>
+      <h2>5. How We Use Information</h2>
       <p>
-        To run the App, show ads, process the Pro purchase through Google, fetch exchange rates, and respond to your emails. We do not sell personal data.
+        Any information handled by third-party SDKs is used solely to provide core application functionality, display non-intrusive advertising in the free version, authenticate Pro entitlements, and answer direct support emails. We do not sell, rent, monetize, or trade any personal data.
       </p>
 
-      <h2>6. Website</h2>
+      <h2>6. Website Privacy</h2>
       <p>
-        The Website is hosted on GitHub Pages, which may log technical data such as IP address and browser details. We do not use analytics or advertising cookies on the Website. If you email us, we use your email and message only to reply.
+        The Website (<a href="https://veebeecodes.me">https://veebeecodes.me</a>) is hosted on GitHub Pages. GitHub may log standard technical web server requests (including visitor IP addresses and browser headers) for security and operational integrity. We do not set tracking cookies, analytics tags, or third-party advertising scripts on the Website.
       </p>
 
-      <h2>7. Retention and deletion</h2>
+      <h2>7. Data Retention &amp; Deletion Requests</h2>
       <p>
-        Data on your device is deleted when you uninstall the App or clear it in Settings. Because we hold no account data, there is usually nothing for us to delete. Emails you send us are kept for up to 24 months, then deleted. To request deletion of anything we hold, email <a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a> with the subject "Data Deletion Request". We respond within 30 days. Data held by Google (AdMob, Play) is managed through your Google account settings.
+        Because all application data is stored solely in your device's local database, deleting the app or clearing data in Android settings deletes all your data immediately. Support emails sent to us are retained for up to 24 months for customer support records and then deleted. To request deletion of any support correspondence, email <a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a> with the subject "Data Deletion Request". We fulfill all verified requests within 30 days.
       </p>
 
-      <h2>8. Children</h2>
+      <h2>8. Children's Privacy</h2>
       <p>
-        The App is intended for users aged 18 and over and for general finance use. It is not directed at children, and we do not knowingly collect children's data. If you believe a child has contacted us, email us and we will delete it.
+        The App is designed for general audiences and adults managing personal and family finances. We do not knowingly target or collect personal information from children under the age of 18.
       </p>
 
       <h2>9. Security</h2>
       <p>
-        Your data stays on your device and is protected by your device's security. We recommend a screen lock and enabling App Lock. No method of electronic storage is completely secure.
+        Your data security relies on Android's application sandboxing and your device lock screen. For sensitive calculations and net worth tracking, we strongly recommend enabling the App Lock feature in Settings.
       </p>
 
-      <h2>10. Your rights</h2>
+      <h2>10. Your Rights (DPDP Act, GDPR, CCPA)</h2>
       <p>
-        Under applicable law, including India's Digital Personal Data Protection Act, 2023, you may ask to access, correct or delete personal data we hold. Email us at the address below.
+        Depending on your jurisdiction, including under India's Digital Personal Data Protection Act, 2023 (DPDPA), the EU/UK General Data Protection Regulation (GDPR), and the California Consumer Privacy Act (CCPA), you have rights regarding access, correction, and deletion of personal data. Since we do not maintain accounts or server-side databases, you exercise these rights directly on your device by managing app permissions, ad consent preferences, or clearing local storage.
       </p>
 
-      <h2>11. Changes</h2>
+      <h2>11. Changes to This Policy</h2>
       <p>
-        We may update this policy. The date above shows the latest version. Material changes will be shown in the App or on this page.
+        We may update this Privacy Policy periodically to reflect app updates or regulatory adjustments. Any revisions will be published on this page with an updated effective date.
       </p>
 
-      <h2>12. Contact</h2>
+      <h2>12. Contact Information</h2>
       <p>
+        If you have questions regarding this Privacy Policy, please contact:<br>
         <strong>VeeBee Code Apps</strong><br>
         Bangalore, Karnataka, India<br>
-        Email: <a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a> | Website: <a href="https://veebeecodes.me">https://veebeecodes.me</a>
+        Email: <a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a><br>
+        Website: <a href="https://veebeecodes.me">https://veebeecodes.me</a>
       </p>
     </div>
   </main>

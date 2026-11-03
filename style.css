@@ -1715,8 +1715,24 @@ footer a:hover {
   color: var(--brand-primary);
 }
 
+.footer-disclaimer {
+  padding: 1.25rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.footer-disclaimer a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .footer-bottom {
-  padding-top: 1.75rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--border-subtle);
   display: flex;
   justify-content: space-between;
@@ -1725,22 +1741,6 @@ footer a:hover {
   gap: 1rem;
   font-size: 0.85rem;
   color: var(--text-dim);
-}
-
-.footer-disclaimer {
-  padding-top: 1.25rem;
-  margin-top: 1.25rem;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  text-align: center;
-  line-height: 1.5;
-}
-
-.footer-disclaimer a {
-  color: var(--brand-primary);
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 /* ==========================================================================
@@ -1915,6 +1915,12 @@ footer a:hover {
   .trust-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
+  }
+
+  .suite-tier-label span {
+    white-space: normal;
+    font-size: 0.72rem;
+    line-height: 1.3;
   }
 
   .doc-content {
