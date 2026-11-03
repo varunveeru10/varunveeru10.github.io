@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator FY 2026-27 (AY 2027-28) | New vs Old Regime | VeeBee</title>
+  <meta name="description" content="Calculate income tax for FY 2026-27 (AY 2027-28) and FY 2025-26. Compare New vs Old Tax Regime, Section 87A rebate (zero tax up to ₹12.75L gross), and marginal relief.">
+  <link rel="canonical" href="https://veebeecodes.me/income-tax-calculator-fy-2026-27.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veebeecodes.me/income-tax-calculator-fy-2026-27.html">
+  <meta property="og:title" content="Income Tax Calculator FY 2026-27 (AY 2027-28) | New vs Old Regime | VeeBee">
+  <meta property="og:description" content="Calculate income tax for FY 2026-27 (AY 2027-28) and FY 2025-26. Compare New vs Old Tax Regime, Section 87A rebate (zero tax up to ₹12.75L gross), and marginal relief.">
+  <meta property="og:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Income Tax Calculator FY 2026-27 (AY 2027-28) | New vs Old Regime | VeeBee">
+  <meta name="twitter:description" content="Calculate income tax for FY 2026-27 (AY 2027-28) and FY 2025-26. Compare New vs Old Tax Regime, Section 87A rebate (zero tax up to ₹12.75L gross), and marginal relief.">
+  <meta name="twitter:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "VeeBee Online Income Tax Calculator FY 2026-27",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "description": "Interactive online income tax calculator for Indian taxpayers comparing New Tax Regime and Old Tax Regime with Section 87A rebate and marginal relief."
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the zero-tax income limit under the FY 2026-27 New Tax Regime for salaried employees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For FY 2026-27 (AY 2027-28), salaried employees pay ₹0 income tax on gross earnings up to ₹12,75,000. This is achieved by combining the ₹75,000 Standard Deduction with the expanded Section 87A rebate on taxable income up to ₹12,00,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does marginal relief work under Section 87A in the New Tax Regime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Marginal relief ensures that a taxpayer whose taxable income slightly exceeds the rebate limit (e.g. ₹12,00,000 in FY 2026-27) does not pay more tax than the excess income earned over that threshold."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which deductions can be claimed in the New Tax Regime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under the New Tax Regime, most Chapter VI-A deductions (such as 80C, 80D, and 24b home loan interest for self-occupied property) are not permitted. However, salaried employees are entitled to the standard deduction (₹75,000) and employer contributions to NPS under Section 80CCD(2)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an individual switch between the New and Old Tax Regimes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salaried individuals without business income can freely switch between the New and Old Tax Regimes each financial year when filing their ITR. Individuals with business or professional income can switch to the old regime only once in a lifetime."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Floating Header -->
+  <header class="floating-header">
+    <nav class="nav-pill" aria-label="Primary Navigation">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
+        <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#hero">Overview</a></li>
+        <li><a href="index.html#flagship">Flagship App</a></li>
+        <li class="nav-dropdown">
+          <a href="income-tax-calculator-fy-2026-27.html" class="nav-dropdown-toggle active" aria-current="page">Calculators ▾</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html" class="active">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#suite">Application Suite</a></li>
+        <li><a href="index.html#why-trust">Why Us</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dtax_calc_header" class="nav-cta" target="_blank" rel="noopener">
+            <svg class="nav-gp-icon" viewBox="0 0 500 500" width="16" height="16" aria-hidden="true">
+              <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
+            </svg>
+            <span>Get on Google Play</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 1.5rem;">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><span>Calculators</span></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li class="breadcrumb-current" aria-current="page">Income Tax Calculator (FY 2026-27)</li>
+      </ol>
+    </nav>
+
+    <!-- Page Title & Header -->
+    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+      <span class="section-eyebrow">Tax Planning &amp; Compliance</span>
+      <h1 class="section-title" style="font-size: 2.25rem;">Income Tax Calculator FY 2026-27 (AY 2027-28)</h1>
+      <p class="section-desc" style="margin-inline: 0; max-width: 760px;">
+        Compare New Tax Regime vs Old Tax Regime for FY 2026-27, FY 2025-26, and FY 2024-25. Accurate computation with Standard Deduction, Section 87A tax rebate, statutory marginal relief, and 4% Health &amp; Education Cess.
+      </p>
+    </div>
+
+    <!-- Interactive Calculator Card -->
+    <div class="calc-demo-card">
+      <!-- Options Bar: Financial Year & Employment Type -->
+      <div class="calc-presets-bar" style="flex-direction: column; align-items: flex-start; gap: 0.85rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; width: 100%;">
+          <span class="calc-presets-label">Financial Year:</span>
+          <div class="tax-toggle-group" role="group" aria-label="Select Financial Year">
+            <button type="button" class="tax-toggle-btn is-active" id="fy-2026-27" onclick="setFy('2026-27', this)">FY 2026–27 (AY 2027–28)</button>
+            <button type="button" class="tax-toggle-btn" id="fy-2025-26" onclick="setFy('2025-26', this)">FY 2025–26 (AY 2026–27)</button>
+            <button type="button" class="tax-toggle-btn" id="fy-2024-25" onclick="setFy('2024-25', this)">FY 2024–25 (AY 2025–26)</button>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <span class="calc-presets-label">Employment Status:</span>
+          <div class="tax-toggle-group" role="group" aria-label="Select Employment Status">
+            <button type="button" class="tax-toggle-btn is-active" id="emp-salaried" onclick="setSalaried(true, this)">Salaried (Std Deduction Applied)</button>
+            <button type="button" class="tax-toggle-btn" id="emp-other" onclick="setSalaried(false, this)">Self-Employed / Other</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-demo-body" style="grid-template-columns: 1.15fr 1fr;">
+        <!-- Controls Column -->
+        <div class="calc-sliders">
+          <!-- Gross Annual Income -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="input-gross-num">Gross Annual Income (₹)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-gross-num" class="calc-number-input" min="300000" max="100000000" step="25000" value="1500000" oninput="syncGross(this.value)">
+                <span class="slider-val-badge" id="badge-gross">₹ 15.00 L</span>
+              </div>
+            </div>
+            <input type="range" id="slider-gross" class="veebee-slider" min="300000" max="5000000" step="25000" value="1500000" oninput="syncGross(this.value)">
+            <div class="slider-scale">
+              <span>₹ 3L</span>
+              <span>₹ 12L</span>
+              <span>₹ 25L</span>
+              <span>₹ 50L</span>
+            </div>
+          </div>
+
+          <!-- Old Regime Deductions Section (Optional / For Comparison) -->
+          <div style="background: var(--bg-ice); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-weight: 700; font-size: 0.88rem; color: var(--brand-navy);">Old Regime Deductions (Optional)</span>
+              <span style="font-size: 0.78rem; color: var(--text-dim);">For New vs Old Comparison</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div>
+                <label for="input-80c" style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">Sec 80C (Max ₹1.5L)</label>
+                <input type="number" id="input-80c" class="calc-number-input" style="width: 100%;" min="0" max="150000" step="5000" value="150000" oninput="calculateTax()">
+              </div>
+              <div>
+                <label for="input-80d" style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">Sec 80D Health (Max ₹1L)</label>
+                <input type="number" id="input-80d" class="calc-number-input" style="width: 100%;" min="0" max="100000" step="5000" value="25000" oninput="calculateTax()">
+              </div>
+              <div>
+                <label for="input-24b" style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">Sec 24(b) Home Loan (Max ₹2L)</label>
+                <input type="number" id="input-24b" class="calc-number-input" style="width: 100%;" min="0" max="200000" step="10000" value="0" oninput="calculateTax()">
+              </div>
+              <div>
+                <label for="input-nps" style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">80CCD(1B) NPS (Max ₹50K)</label>
+                <input type="number" id="input-nps" class="calc-number-input" style="width: 100%;" min="0" max="50000" step="5000" value="0" oninput="calculateTax()">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Column -->
+        <div class="calc-result-box" aria-live="polite">
+          <div class="calc-result-eyebrow" id="regime-heading">Total Tax Payable (New Tax Regime)</div>
+          <div class="calc-result-emi" id="res-total-tax">₹ 97,500</div>
+
+          <!-- Regime Comparison Cards -->
+          <div class="regime-comparison-grid">
+            <div class="regime-card is-recommended" id="card-new-regime">
+              <span class="regime-badge regime-badge-recommended" id="badge-new-rec">Recommended</span>
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">New Tax Regime</div>
+              <div class="regime-tax-total" id="tax-new-display">₹ 97,500</div>
+              <div style="font-size: 0.8rem; color: var(--text-dim);" id="tax-new-sub">Effective: 6.5% • ₹8,125/mo</div>
+            </div>
+
+            <div class="regime-card" id="card-old-regime">
+              <span class="regime-badge regime-badge-alt" id="badge-old-rec">Alternative</span>
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Old Tax Regime</div>
+              <div class="regime-tax-total" id="tax-old-display">₹ 2,02,800</div>
+              <div style="font-size: 0.8rem; color: var(--text-dim);" id="tax-old-sub">Effective: 13.5% • ₹16,900/mo</div>
+            </div>
+          </div>
+
+          <!-- Tax Savings Banner -->
+          <div id="savings-banner" style="background: rgba(37, 99, 235, 0.08); border-left: 3px solid var(--brand-primary); padding: 0.75rem 1rem; border-radius: var(--radius-xs); margin-top: 1rem; font-size: 0.88rem; font-weight: 700; color: var(--brand-navy);">
+            💡 New Regime saves you ₹ 1,05,300 in taxes!
+          </div>
+
+          <!-- Breakdown Grid -->
+          <div class="calc-breakdown-grid" style="margin-top: 1rem;">
+            <div class="cb-item">
+              <span>Standard Deduction</span>
+              <strong id="res-std-ded">₹ 75,000</strong>
+            </div>
+            <div class="cb-item">
+              <span>Taxable Income</span>
+              <strong id="res-taxable">₹ 14,25,000</strong>
+            </div>
+            <div class="cb-item">
+              <span>Section 87A Rebate</span>
+              <strong id="res-rebate">₹ 0</strong>
+            </div>
+            <div class="cb-item">
+              <span>Cess (4%)</span>
+              <strong id="res-cess">₹ 3,750</strong>
+            </div>
+          </div>
+
+          <div class="calc-disclaimer-note">
+            Calculated under statutory Finance Bill guidelines. Subject to changes notified by the Central Board of Direct Taxes (CBDT).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Tax Slab Breakdown Table -->
+    <section class="section-block" style="padding-top: 2rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1rem;">
+        <span class="section-eyebrow">Income Tax Slabs</span>
+        <h2 class="section-title" style="font-size: 1.85rem;" id="slab-title">Slab-by-Slab Tax Breakdown (FY 2026-27 New Regime)</h2>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+        <table class="slab-table" id="slab-table">
+          <thead>
+            <tr>
+              <th>Income Slab</th>
+              <th>Tax Rate</th>
+              <th>Taxable Amount in Slab</th>
+              <th>Tax Computed</th>
+            </tr>
+          </thead>
+          <tbody id="slab-table-body">
+            <!-- Dynamically populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Math Explanation & Worked Example Section -->
+    <section class="section-block" style="padding-top: 1.5rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="section-eyebrow">Tax Mechanics Explained</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">How FY 2026-27 Income Tax Is Calculated</h2>
+      </div>
+
+      <div class="worked-example-card">
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-dark);">
+          The New Tax Regime for <strong>Financial Year 2026-27 (Assessment Year 2027-28)</strong> incorporates the revised slabs and an expanded Section 87A rebate. For salaried individuals, a flat <strong>₹75,000 Standard Deduction</strong> is deducted directly from gross salary. Furthermore, taxpayers with net taxable income up to <strong>₹12,00,000</strong> receive a 100% tax rebate under Section 87A (up to ₹60,000), resulting in zero income tax payable on gross earnings up to <strong>₹12.75 Lakhs</strong>.
+        </p>
+
+        <div class="formula-display">
+          Taxable Income = Gross Salary - Standard Deduction (₹75,000)<br>
+          Total Tax Payable = (Base Slab Tax - Section 87A Rebate + Surcharge) × 1.04
+        </div>
+
+        <h3 style="font-size: 1.2rem; color: var(--brand-navy); margin-top: 1.5rem; margin-bottom: 0.75rem;">Step-by-Step Worked Example (Using Initial Values)</h3>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark);">
+          Let us calculate tax on a gross annual salary of <strong>₹15,00,000</strong> under FY 2026-27 New Tax Regime:
+        </p>
+        <ol style="margin: 0.75rem 0 1rem 1.25rem; font-size: 0.94rem; color: var(--text-muted); line-height: 1.8;">
+          <li>Gross Salary: <code>₹15,00,000</code></li>
+          <li>Less Standard Deduction: <code>₹75,000</code></li>
+          <li>Net Taxable Income: <code>₹14,25,000</code></li>
+          <li>₹0 to ₹4,00,000 (Nil rate): <code>₹0</code></li>
+          <li>₹4,00,001 to ₹8,00,000 (₹4,00,000 @ 5%): <code>₹20,000</code></li>
+          <li>₹8,00,001 to ₹12,00,000 (₹4,00,000 @ 10%): <code>₹40,000</code></li>
+          <li>₹12,00,001 to ₹14,25,000 (₹2,25,000 @ 15%): <code>₹33,750</code></li>
+          <li>Total Base Tax before rebate: <code>₹20,000 + ₹40,000 + ₹33,750 = ₹93,750</code></li>
+          <li>Rebate 87A: Since taxable income exceeds ₹12,00,000, rebate is <code>₹0</code></li>
+          <li>Marginal Relief Check: Excess income over ₹12L = <code>₹2,25,000</code>. Since base tax (₹93,750) is less than excess income, no marginal relief is required.</li>
+          <li>Health &amp; Education Cess (4% of ₹93,750): <code>₹3,750</code></li>
+          <li>Total Tax Payable: <code>₹93,750 + ₹3,750 = ₹97,500</code> (Effective Tax Rate: <strong>6.50%</strong>)</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-block" style="padding-top: 1rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="section-eyebrow">Frequently Asked Questions</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">Indian Income Tax FAQs</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>How does the zero-tax limit of ₹12.75 Lakhs work under FY 2026-27?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            For salaried employees, gross income up to ₹12,75,000 first gets a standard deduction of ₹75,000, bringing net taxable income to ₹12,00,000. Under the FY 2026-27 New Tax Regime, Section 87A grants a full rebate up to ₹60,000 for taxable income up to ₹12 Lakhs, making your tax liability exactly ₹0.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>What happens if my taxable income is ₹12,10,000? Do I lose the entire 87A rebate?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. The statutory <strong>Marginal Relief</strong> provision protects you. The total tax payable before cess cannot exceed the incremental income earned above ₹12 Lakhs. For example, if taxable income is ₹12,10,000 (excess of ₹10,000 over ₹12L), your base tax is capped at ₹10,000 instead of the standard slab tax of ₹61,500.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>When is the Old Tax Regime still beneficial compared to the New Regime?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            The Old Tax Regime is generally advantageous only if you claim substantial aggregate deductions exceeding ₹3.75 to ₹4.25 Lakhs (such as ₹1.5L under 80C, ₹50K under 80CCD(1B) NPS, ₹1L under 80D health insurance, and up to ₹2L for home loan interest under Section 24b). Our calculator automatically compares both regimes and flags the optimal choice.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>Does this web page store my salary or tax inputs?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. All tax calculations run entirely inside your browser sandbox. No financial data, salary amounts, or deductions are transmitted to external servers. For comprehensive tax planning with HRA exemption calculator, capital gains tax, and offline PDF reports, download the VeeBee Android app.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Play App Promotion Banner -->
+    <div class="calc-app-cta-banner">
+      <div class="calc-app-cta-text">
+        <h3>Save results, export PDF reports and track tax plans in the app</h3>
+        <p>
+          Need HRA exemption calculators, capital gains estimators, Old vs New regime comparisons, and offline PDF tax reports? Get <strong>VeeBee: Finance Calculator</strong> on Google Play — 64 Indian financial calculators with zero login required.
+        </p>
+      </div>
+      <div>
+        <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dincome_tax_calculator_page" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-gp-icon" viewBox="0 0 500 500" width="18" height="18" aria-hidden="true">
+            <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
+          </svg>
+          <span>Get Free on Google Play</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Studio Footer -->
+  <footer class="studio-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-full.png" alt="VeeBee Code Apps Logo" class="footer-brand-logo" width="104" height="52" loading="lazy">
+          <p>
+            Independent Android application engineering studio building high-precision utility tools that respect user privacy.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Online Calculators</h5>
+          <ul>
+            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html" class="active">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Application Suite</h5>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dtax_page_footer" target="_blank" rel="noopener">VeeBee: Finance Calculator</a></li>
+            <li><a href="index.html#apps">Upcoming Studio Roadmap</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dtax_page_footer" target="_blank" rel="noopener">Google Play Developer Page ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal &amp; Policies</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Financial Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact &amp; Location</h5>
+          <ul>
+            <li><a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a></li>
+            <li style="color: var(--text-dim); font-size: 0.88rem; margin-top: 0.35rem;">
+              Bangalore, Karnataka, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        Calculations, projections, and tax estimates provided on this page are for illustrative and educational purposes only and do not constitute formal tax or accounting advice. See our <a href="disclaimer.html">full disclaimer</a>.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
+        <div>Independent Android Software Studio</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('is-open');
+        const b = i.querySelector('.faq-trigger');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function formatInr(val) {
+      return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      }).format(Math.round(val));
+    }
+
+    function formatLakhs(val) {
+      if (val >= 10000000) return '₹ ' + (val / 10000000).toFixed(2) + ' Cr';
+      if (val >= 100000) return '₹ ' + (val / 100000).toFixed(2) + ' L';
+      return formatInr(val);
+    }
+
+    let currentFy = '2026-27';
+    let isSalaried = true;
+
+    function setFy(fy, btn) {
+      currentFy = fy;
+      document.querySelectorAll('.tax-toggle-btn').forEach(b => {
+        if (b.id.startsWith('fy-')) b.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+      calculateTax();
+    }
+
+    function setSalaried(salaried, btn) {
+      isSalaried = salaried;
+      document.querySelectorAll('.tax-toggle-btn').forEach(b => {
+        if (b.id.startsWith('emp-')) b.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+      calculateTax();
+    }
+
+    function computeRegimeTax(gross, fy, isNewRegime, isSalaried, deductions) {
+      let stdDed = 0;
+      if (isSalaried) {
+        stdDed = isNewRegime ? 75000 : 50000;
+        stdDed = Math.min(stdDed, gross);
+      }
+
+      let taxable = gross - stdDed;
+      let totalDeds = stdDed;
+
+      if (!isNewRegime) {
+        const sec80c = Math.min(deductions.c80 || 0, 150000);
+        const sec80d = Math.min(deductions.d80 || 0, 100000);
+        const sec24b = Math.min(deductions.s24 || 0, 200000);
+        const nps = Math.min(deductions.nps || 0, 50000);
+        const extraDeds = sec80c + sec80d + sec24b + nps;
+        totalDeds += extraDeds;
+        taxable = Math.max(0, gross - totalDeds);
+      } else {
+        taxable = Math.max(0, taxable);
+      }
+
+      let slabs = [];
+      let rebateLimit = 0;
+      let maxRebate = 0;
+
+      if (isNewRegime) {
+        if (fy === '2026-27') {
+          rebateLimit = 1200000;
+          maxRebate = 60000;
+          slabs = [
+            { min: 0, max: 400000, rate: 0, label: '₹0 – ₹4 Lakhs' },
+            { min: 400000, max: 800000, rate: 5, label: '₹4 Lakhs – ₹8 Lakhs' },
+            { min: 800000, max: 1200000, rate: 10, label: '₹8 Lakhs – ₹12 Lakhs' },
+            { min: 1200000, max: 1600000, rate: 15, label: '₹12 Lakhs – ₹16 Lakhs' },
+            { min: 1600000, max: 2000000, rate: 20, label: '₹16 Lakhs – ₹20 Lakhs' },
+            { min: 2000000, max: 2400000, rate: 25, label: '₹20 Lakhs – ₹24 Lakhs' },
+            { min: 2400000, max: Infinity, rate: 30, label: 'Above ₹24 Lakhs' }
+          ];
+        } else { // FY 2025-26 & 2024-25 New
+          rebateLimit = 700000;
+          maxRebate = 25000;
+          slabs = [
+            { min: 0, max: 300000, rate: 0, label: '₹0 – ₹3 Lakhs' },
+            { min: 300000, max: 700000, rate: 5, label: '₹3 Lakhs – ₹7 Lakhs' },
+            { min: 700000, max: 1000000, rate: 10, label: '₹7 Lakhs – ₹10 Lakhs' },
+            { min: 1000000, max: 1200000, rate: 15, label: '₹10 Lakhs – ₹12 Lakhs' },
+            { min: 1200000, max: 1500000, rate: 20, label: '₹12 Lakhs – ₹15 Lakhs' },
+            { min: 1500000, max: Infinity, rate: 30, label: 'Above ₹15 Lakhs' }
+          ];
+        }
+      } else { // Old Regime
+        rebateLimit = 500000;
+        maxRebate = 12500;
+        slabs = [
+          { min: 0, max: 250000, rate: 0, label: '₹0 – ₹2.5 Lakhs' },
+          { min: 250000, max: 500000, rate: 5, label: '₹2.5 Lakhs – ₹5 Lakhs' },
+          { min: 500000, max: 1000000, rate: 20, label: '₹5 Lakhs – ₹10 Lakhs' },
+          { min: 1000000, max: Infinity, rate: 30, label: 'Above ₹10 Lakhs' }
+        ];
+      }
+
+      let baseTax = 0;
+      let breakdown = [];
+      for (const s of slabs) {
+        if (taxable > s.min) {
+          const ceiling = Math.min(taxable, s.max);
+          const amtInSlab = ceiling - s.min;
+          const taxForSlab = amtInSlab * (s.rate / 100);
+          baseTax += taxForSlab;
+          breakdown.push({
+            label: s.label,
+            rate: s.rate,
+            amtInSlab: amtInSlab,
+            tax: taxForSlab
+          });
+        } else {
+          breakdown.push({
+            label: s.label,
+            rate: s.rate,
+            amtInSlab: 0,
+            tax: 0
+          });
+        }
+      }
+
+      let rebate = 0;
+      let taxAfterRebate = baseTax;
+
+      if (taxable <= rebateLimit) {
+        rebate = Math.min(baseTax, maxRebate);
+        taxAfterRebate = Math.max(0, baseTax - rebate);
+      } else if (isNewRegime) {
+        // Marginal Relief
+        const excess = taxable - rebateLimit;
+        if (baseTax > excess) {
+          taxAfterRebate = excess;
+          rebate = Math.max(0, baseTax - excess);
+        } else {
+          taxAfterRebate = baseTax;
+        }
+      }
+
+      let surcharge = 0;
+      if (taxable > 50000000) surcharge = taxAfterRebate * (isNewRegime ? 0.25 : 0.37);
+      else if (taxable > 20000000) surcharge = taxAfterRebate * 0.25;
+      else if (taxable > 10000000) surcharge = taxAfterRebate * 0.15;
+      else if (taxable > 5000000) surcharge = taxAfterRebate * 0.10;
+
+      const cess = (taxAfterRebate + surcharge) * 0.04;
+      const totalTax = Math.round(taxAfterRebate + surcharge + cess);
+
+      return {
+        gross,
+        stdDed,
+        totalDeds,
+        taxable,
+        baseTax,
+        rebate,
+        taxAfterRebate,
+        surcharge,
+        cess,
+        totalTax,
+        breakdown
+      };
+    }
+
+    function calculateTax() {
+      const gross = parseFloat(document.getElementById('input-gross-num').value) || 0;
+      const c80 = parseFloat(document.getElementById('input-80c').value) || 0;
+      const d80 = parseFloat(document.getElementById('input-80d').value) || 0;
+      const s24 = parseFloat(document.getElementById('input-24b').value) || 0;
+      const nps = parseFloat(document.getElementById('input-nps').value) || 0;
+
+      const newTax = computeRegimeTax(gross, currentFy, true, isSalaried, {});
+      const oldTax = computeRegimeTax(gross, currentFy, false, isSalaried, { c80, d80, s24, nps });
+
+      document.getElementById('badge-gross').textContent = formatLakhs(gross);
+
+      // Display New Regime values
+      document.getElementById('res-total-tax').textContent = formatInr(newTax.totalTax);
+      document.getElementById('res-std-ded').textContent = formatInr(newTax.stdDed);
+      document.getElementById('res-taxable').textContent = formatInr(newTax.taxable);
+      document.getElementById('res-rebate').textContent = formatInr(newTax.rebate);
+      document.getElementById('res-cess').textContent = formatInr(newTax.cess);
+
+      // Display Comparison Cards
+      document.getElementById('tax-new-display').textContent = formatInr(newTax.totalTax);
+      const effectiveNew = gross > 0 ? ((newTax.totalTax / gross) * 100).toFixed(1) : 0;
+      document.getElementById('tax-new-sub').textContent = 'Effective: ' + effectiveNew + '% • ' + formatInr(newTax.totalTax / 12) + '/mo';
+
+      document.getElementById('tax-old-display').textContent = formatInr(oldTax.totalTax);
+      const effectiveOld = gross > 0 ? ((oldTax.totalTax / gross) * 100).toFixed(1) : 0;
+      document.getElementById('tax-old-sub').textContent = 'Effective: ' + effectiveOld + '% • ' + formatInr(oldTax.totalTax / 12) + '/mo';
+
+      const diff = Math.abs(newTax.totalTax - oldTax.totalTax);
+      const savingsBanner = document.getElementById('savings-banner');
+      const cardNew = document.getElementById('card-new-regime');
+      const cardOld = document.getElementById('card-old-regime');
+      const badgeNew = document.getElementById('badge-new-rec');
+      const badgeOld = document.getElementById('badge-old-rec');
+
+      if (newTax.totalTax <= oldTax.totalTax) {
+        cardNew.classList.add('is-recommended');
+        cardOld.classList.remove('is-recommended');
+        badgeNew.className = 'regime-badge regime-badge-recommended';
+        badgeNew.textContent = 'Recommended';
+        badgeOld.className = 'regime-badge regime-badge-alt';
+        badgeOld.textContent = 'Alternative';
+        savingsBanner.innerHTML = diff === 0
+          ? '⚖️ Both regimes result in identical tax for this scenario.'
+          : '💡 <strong>New Tax Regime</strong> saves you <strong>' + formatInr(diff) + '</strong> in annual taxes!';
+      } else {
+        cardOld.classList.add('is-recommended');
+        cardNew.classList.remove('is-recommended');
+        badgeOld.className = 'regime-badge regime-badge-recommended';
+        badgeOld.textContent = 'Recommended';
+        badgeNew.className = 'regime-badge regime-badge-alt';
+        badgeNew.textContent = 'Alternative';
+        savingsBanner.innerHTML = '💡 <strong>Old Tax Regime</strong> saves you <strong>' + formatInr(diff) + '</strong> with your deductions!';
+      }
+
+      // Populate Slab Table
+      document.getElementById('slab-title').textContent = 'Slab-by-Slab Tax Breakdown (FY ' + currentFy + ' New Regime)';
+      const tbody = document.getElementById('slab-table-body');
+      tbody.innerHTML = '';
+      newTax.breakdown.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${row.label}</strong></td>
+          <td>${row.rate}%</td>
+          <td>${row.amtInSlab > 0 ? formatInr(row.amtInSlab) : '—'}</td>
+          <td style="text-align: right; font-weight: 700; color: ${row.tax > 0 ? 'var(--brand-navy)' : 'var(--text-dim)'};">${row.tax > 0 ? formatInr(row.tax) : '₹0'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function syncGross(val) {
+      document.getElementById('slider-gross').value = val;
+      document.getElementById('input-gross-num').value = val;
+      calculateTax();
+    }
+
+    document.addEventListener('DOMContentLoaded', calculateTax);
+  </script>
+</body>
+</html>

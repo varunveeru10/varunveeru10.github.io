@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP Calculator | Mutual Fund SIP Return &amp; Wealth Growth Planner | VeeBee</title>
+  <meta name="description" content="Calculate mutual fund SIP returns, total wealth corpus, invested amount, and estimated capital gains with monthly compounding. Free online calculator by VeeBee Code Apps.">
+  <link rel="canonical" href="https://veebeecodes.me/sip-calculator.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veebeecodes.me/sip-calculator.html">
+  <meta property="og:title" content="SIP Calculator | Mutual Fund SIP Return &amp; Wealth Growth Planner | VeeBee">
+  <meta property="og:description" content="Calculate mutual fund SIP returns, total wealth corpus, invested amount, and estimated capital gains with monthly compounding. Free online calculator by VeeBee Code Apps.">
+  <meta property="og:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SIP Calculator | Mutual Fund SIP Return &amp; Wealth Growth Planner | VeeBee">
+  <meta name="twitter:description" content="Calculate mutual fund SIP returns, total wealth corpus, invested amount, and estimated capital gains with monthly compounding. Free online calculator by VeeBee Code Apps.">
+  <meta name="twitter:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "VeeBee Online SIP Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "description": "Interactive online mutual fund SIP return calculator with monthly compounding, invested capital breakdown, and wealth multiplier analysis."
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does a Systematic Investment Plan (SIP) work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Systematic Investment Plan (SIP) allows you to invest a fixed sum into mutual funds on a recurring monthly or quarterly date. This enables rupee cost averaging (buying more units when markets are down and fewer when markets are up) and harnesses compound growth over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What expected annual return rate should I use for equity mutual funds in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, Indian broad-market equity indices (Nifty 50 and Sensex) have delivered 11% to 14% annualized returns over 10 to 15-year holding horizons. Conservative planning typically uses 10% to 12% for large-cap and diversified equity funds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Step-Up SIP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Step-Up or Top-Up SIP automatically increases your monthly investment contribution by a fixed percentage (for example, 10% each year) in tandem with annual salary increments. This dramatically increases your terminal wealth compared to a flat SIP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are returns from SIP investments guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Mutual fund investments are subject to market risks, and returns fluctuate based on portfolio performance and market conditions. Calculations shown are mathematical projections based on assumed average compound annual growth rates (CAGR)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Floating Header -->
+  <header class="floating-header">
+    <nav class="nav-pill" aria-label="Primary Navigation">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
+        <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#hero">Overview</a></li>
+        <li><a href="index.html#flagship">Flagship App</a></li>
+        <li class="nav-dropdown">
+          <a href="sip-calculator.html" class="nav-dropdown-toggle active" aria-current="page">Calculators ▾</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html" class="active">SIP Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#suite">Application Suite</a></li>
+        <li><a href="index.html#why-trust">Why Us</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dsip_calc_header" class="nav-cta" target="_blank" rel="noopener">
+            <svg class="nav-gp-icon" viewBox="0 0 500 500" width="16" height="16" aria-hidden="true">
+              <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
+            </svg>
+            <span>Get on Google Play</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 1.5rem;">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><span>Calculators</span></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li class="breadcrumb-current" aria-current="page">SIP Calculator</li>
+      </ol>
+    </nav>
+
+    <!-- Page Title & Header -->
+    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+      <span class="section-eyebrow">Investment &amp; Wealth Planner</span>
+      <h1 class="section-title" style="font-size: 2.25rem;">SIP Calculator — Mutual Fund Wealth Growth Planner</h1>
+      <p class="section-desc" style="margin-inline: 0; max-width: 760px;">
+        Discover how regular monthly investments compound over time. Calculate your expected maturity corpus, total capital invested, and net capital gain using exact monthly advance compounding.
+      </p>
+    </div>
+
+    <!-- Interactive Calculator Card -->
+    <div class="calc-demo-card">
+      <div class="calc-presets-bar">
+        <span class="calc-presets-label">Popular Investment Goals:</span>
+        <div class="calc-preset-group" role="group" aria-label="Investment Scenarios">
+          <button type="button" class="preset-chip" onclick="setSipPreset(5000, 12.0, 10, this)">Starter • ₹5K/mo (10Y)</button>
+          <button type="button" class="preset-chip is-active" onclick="setSipPreset(10000, 12.0, 10, this)">Balanced • ₹10K/mo (10Y)</button>
+          <button type="button" class="preset-chip" onclick="setSipPreset(25000, 14.0, 15, this)">Wealth Builder • ₹25K/mo (15Y)</button>
+        </div>
+      </div>
+
+      <div class="calc-demo-body">
+        <!-- Controls Column -->
+        <div class="calc-sliders">
+          <!-- Monthly Investment -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="input-monthly-num">Monthly Investment (₹)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-monthly-num" class="calc-number-input" min="500" max="10000000" step="500" value="10000" oninput="syncMonthly(this.value)">
+                <span class="slider-val-badge" id="badge-monthly">₹ 10,000 / mo</span>
+              </div>
+            </div>
+            <input type="range" id="slider-monthly" class="veebee-slider" min="500" max="100000" step="500" value="10000" oninput="syncMonthly(this.value)">
+            <div class="slider-scale">
+              <span>₹ 500</span>
+              <span>₹ 25K</span>
+              <span>₹ 50K</span>
+              <span>₹ 1 Lakh</span>
+            </div>
+          </div>
+
+          <!-- Expected Annual Return Rate -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="input-return-num">Expected Return Rate (% p.a.)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-return-num" class="calc-number-input" min="1.0" max="30.0" step="0.1" value="12.0" oninput="syncReturn(this.value)">
+                <span class="slider-val-badge" id="badge-return">12.0%</span>
+              </div>
+            </div>
+            <input type="range" id="slider-return" class="veebee-slider" min="1.0" max="30.0" step="0.1" value="12.0" oninput="syncReturn(this.value)">
+            <div class="slider-scale">
+              <span>1%</span>
+              <span>10%</span>
+              <span>15%</span>
+              <span>30%</span>
+            </div>
+          </div>
+
+          <!-- Time Horizon -->
+          <div class="slider-group" style="margin-bottom: 0;">
+            <div class="slider-header">
+              <label for="input-tenure-num">Investment Period (Years)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-tenure-num" class="calc-number-input" min="1" max="40" step="1" value="10" oninput="syncTenure(this.value)">
+                <span class="slider-val-badge" id="badge-tenure">10 Yrs (120 Mo)</span>
+              </div>
+            </div>
+            <input type="range" id="slider-tenure" class="veebee-slider" min="1" max="40" step="1" value="10" oninput="syncTenure(this.value)">
+            <div class="slider-scale">
+              <span>1 Yr</span>
+              <span>10 Yrs</span>
+              <span>25 Yrs</span>
+              <span>40 Yrs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Column -->
+        <div class="calc-result-box" aria-live="polite">
+          <div class="calc-result-eyebrow">Estimated Maturity Corpus</div>
+          <div class="calc-result-emi" id="res-corpus">₹ 23,23,391</div>
+
+          <div class="calc-breakdown-grid">
+            <div class="cb-item">
+              <span>Total Invested</span>
+              <strong id="res-invested">₹ 12,00,000</strong>
+            </div>
+            <div class="cb-item">
+              <span>Estimated Capital Gains</span>
+              <strong id="res-gain">₹ 11,23,391</strong>
+            </div>
+            <div class="cb-item">
+              <span>Wealth Multiplier</span>
+              <strong id="res-multiplier">1.94x of principal</strong>
+            </div>
+            <div class="cb-item">
+              <span>Gain Share</span>
+              <strong id="res-share">48.3% of corpus</strong>
+            </div>
+          </div>
+
+          <!-- Visual Ratio Bar -->
+          <div class="progress-ratio-bar" aria-hidden="true">
+            <div class="ratio-principal" id="bar-invested" style="width: 51.7%;"></div>
+            <div class="ratio-interest" id="bar-gain" style="width: 48.3%;"></div>
+          </div>
+          <div class="ratio-legend">
+            <span id="legend-invested">● Invested (51.7%)</span>
+            <span id="legend-gain">● Capital Gain (48.3%)</span>
+          </div>
+
+          <div class="calc-disclaimer-note">
+            Calculated with monthly compounding where payments occur at the beginning of each month. Mutual fund investments are subject to market risks.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Explanation & Worked Example Section -->
+    <section class="section-block" style="padding-top: 2.5rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="section-eyebrow">Mathematical Mechanics</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">How SIP Compound Growth Is Calculated</h2>
+      </div>
+
+      <div class="worked-example-card">
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-dark);">
+          A Systematic Investment Plan works on the principle of an <strong>annuity due</strong>, where each installment is invested at the beginning of every month and earns compound interest for the remainder of the total investment duration.
+        </p>
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-dark);">
+          The future maturity value (\(M\)) is calculated mathematically using the compound interest formula:
+        </p>
+
+        <div class="formula-display">
+          M = P × [ (1 + i) × ((1 + i)^n - 1) / i ]
+        </div>
+
+        <ul style="margin: 1rem 0 1.5rem 1.25rem; font-size: 0.94rem; color: var(--text-muted); line-height: 1.8;">
+          <li><strong>P:</strong> Fixed monthly investment amount.</li>
+          <li><strong>i (Monthly Periodic Return):</strong> Annual expected return rate divided by 12 and divided by 100 (e.g. 12% p.a. = 12 / 1200 = 0.01 per month).</li>
+          <li><strong>n:</strong> Total number of monthly installments paid (\(\text{Years} \times 12\)).</li>
+        </ul>
+
+        <h3 style="font-size: 1.2rem; color: var(--brand-navy); margin-top: 1.5rem; margin-bottom: 0.75rem;">Step-by-Step Worked Example (Using Initial Values)</h3>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark);">
+          Let us calculate the wealth accumulated from a monthly SIP of <strong>₹10,000</strong> for <strong>10 years (120 months)</strong> at an expected return of <strong>12.0% p.a.</strong>:
+        </p>
+        <ol style="margin: 0.75rem 0 1rem 1.25rem; font-size: 0.94rem; color: var(--text-muted); line-height: 1.8;">
+          <li>Monthly return rate: <code>i = 12.0 / 12 / 100 = 0.01</code></li>
+          <li>Number of monthly installments: <code>n = 10 × 12 = 120</code></li>
+          <li>Total capital invested: <code>10,000 × 120 = ₹12,00,000</code></li>
+          <li>Compound multiplier: <code>(1 + 0.01)^120 = (1.01)^120 ≈ 3.300387</code></li>
+          <li>Growth factor: <code>((1.01)^120 - 1) / 0.01 = 2.300387 / 0.01 = 230.0387</code></li>
+          <li>Pre-compounding factor: <code>10,000 × 1.01 × 230.0387 = ₹23,23,390.79</code></li>
+          <li>Total Maturity Value (Corpus): <strong>₹23,23,391</strong> (rounded to nearest rupee)</li>
+          <li>Net Capital Gain: <code>₹23,23,391 - ₹12,00,000 = ₹11,23,391</code></li>
+          <li>Wealth Multiplier: <code>₹23,23,391 / ₹12,00,000 = 1.94x</code></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-block" style="padding-top: 1rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="section-eyebrow">Frequently Asked Questions</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">SIP &amp; Mutual Fund FAQs</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>Can I pause, increase, or withdraw my SIP at any time?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Yes. In open-ended mutual funds, SIPs offer complete liquidity. You can pause or stop your SIP mandate without penalty, or redeem your accumulated units (subject to any fund exit load or statutory ELSS lock-in period).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>How are capital gains taxed on equity mutual fund SIPs in India?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            For equity-oriented funds, gains on units held for more than 12 months are treated as Long Term Capital Gains (LTCG) and taxed at 12.5% on annual gains exceeding ₹1.25 Lakhs (post-July 2024 budget rules). Gains on units held for 12 months or less are Short Term Capital Gains (STCG) taxed at 20%.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>Is SIP better than investing a lump sum?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            SIPs eliminate the emotional stress of timing volatile markets through rupee cost averaging and build disciplined savings. Lump sum investing can outperform during steady bull markets, but SIPs significantly protect you from market peak drawdowns.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>Does this web calculator save my investment plans?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. This web page calculates results on your browser processor without saving or transmitting information. To save multiple SIP plans, track your overall private net worth, and set target milestones offline, download our Android application.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Play App Promotion Banner -->
+    <div class="calc-app-cta-banner">
+      <div class="calc-app-cta-text">
+        <h3>Save results, export PDF reports and track goals in the app</h3>
+        <p>
+          Model step-up annual SIP increases, inflation-adjusted corpus requirements, and private retirement milestones on your Android device with <strong>VeeBee: Finance Calculator</strong>. 100% private with no login required.
+        </p>
+      </div>
+      <div>
+        <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dsip_calculator_page" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-gp-icon" viewBox="0 0 500 500" width="18" height="18" aria-hidden="true">
+            <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
+          </svg>
+          <span>Get Free on Google Play</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Studio Footer -->
+  <footer class="studio-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-full.png" alt="VeeBee Code Apps Logo" class="footer-brand-logo" width="104" height="52" loading="lazy">
+          <p>
+            Independent Android application engineering studio building high-precision utility tools that respect user privacy.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Online Calculators</h5>
+          <ul>
+            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html" class="active">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Application Suite</h5>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dsip_page_footer" target="_blank" rel="noopener">VeeBee: Finance Calculator</a></li>
+            <li><a href="index.html#apps">Upcoming Studio Roadmap</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dsip_page_footer" target="_blank" rel="noopener">Google Play Developer Page ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal &amp; Policies</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Financial Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact &amp; Location</h5>
+          <ul>
+            <li><a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a></li>
+            <li style="color: var(--text-dim); font-size: 0.88rem; margin-top: 0.35rem;">
+              Bangalore, Karnataka, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        Calculations, projections, and tax estimates provided on this page are for illustrative and educational purposes only and do not constitute formal investment or financial advice. See our <a href="disclaimer.html">full disclaimer</a>.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
+        <div>Independent Android Software Studio</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('is-open');
+        const b = i.querySelector('.faq-trigger');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function formatInr(val) {
+      return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      }).format(Math.round(val));
+    }
+
+    function formatLakhs(val) {
+      if (val >= 10000000) return '₹ ' + (val / 10000000).toFixed(2) + ' Cr';
+      if (val >= 100000) return '₹ ' + (val / 100000).toFixed(2) + ' L';
+      return formatInr(val);
+    }
+
+    function calculateSip() {
+      const p = parseFloat(document.getElementById('input-monthly-num').value) || 0;
+      const rateAnnual = parseFloat(document.getElementById('input-return-num').value) || 0;
+      const tenureYears = parseFloat(document.getElementById('input-tenure-num').value) || 0;
+
+      const monthlyRate = rateAnnual / 12 / 100;
+      const totalMonths = Math.round(tenureYears * 12);
+
+      let corpus = 0;
+      for (let m = 1; m <= totalMonths; m++) {
+        corpus = (corpus + p) * (1 + monthlyRate);
+      }
+
+      const totalInvested = p * totalMonths;
+      const estimatedReturns = Math.max(0, corpus - totalInvested);
+      const multiplier = totalInvested > 0 ? (corpus / totalInvested) : 1.0;
+
+      const investedPct = corpus > 0 ? (totalInvested / corpus) * 100 : 100;
+      const returnsPct = corpus > 0 ? (estimatedReturns / corpus) * 100 : 0;
+
+      document.getElementById('res-corpus').textContent = formatInr(corpus);
+      document.getElementById('res-invested').textContent = formatInr(totalInvested);
+      document.getElementById('res-gain').textContent = formatInr(estimatedReturns);
+      document.getElementById('res-multiplier').textContent = multiplier.toFixed(2) + 'x of principal';
+      document.getElementById('res-share').textContent = returnsPct.toFixed(1) + '% of corpus';
+
+      document.getElementById('bar-invested').style.width = investedPct.toFixed(1) + '%';
+      document.getElementById('bar-gain').style.width = returnsPct.toFixed(1) + '%';
+      document.getElementById('legend-invested').textContent = '● Invested (' + investedPct.toFixed(1) + '%)';
+      document.getElementById('legend-gain').textContent = '● Capital Gain (' + returnsPct.toFixed(1) + '%)';
+
+      document.getElementById('badge-monthly').textContent = formatInr(p) + ' / mo';
+      document.getElementById('badge-return').textContent = rateAnnual.toFixed(1) + '%';
+      document.getElementById('badge-tenure').textContent = tenureYears + ' Yrs (' + totalMonths + ' Mo)';
+    }
+
+    function syncMonthly(val) {
+      document.getElementById('slider-monthly').value = val;
+      document.getElementById('input-monthly-num').value = val;
+      calculateSip();
+    }
+
+    function syncReturn(val) {
+      document.getElementById('slider-return').value = val;
+      document.getElementById('input-return-num').value = val;
+      calculateSip();
+    }
+
+    function syncTenure(val) {
+      document.getElementById('slider-tenure').value = val;
+      document.getElementById('input-tenure-num').value = val;
+      calculateSip();
+    }
+
+    function setSipPreset(p, r, t, chip) {
+      document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+      syncMonthly(p);
+      syncReturn(r);
+      syncTenure(t);
+    }
+
+    document.addEventListener('DOMContentLoaded', calculateSip);
+  </script>
+</body>
+</html>

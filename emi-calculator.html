@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan EMI Calculator | Online Home, Car &amp; Personal Loan EMI Planner | VeeBee</title>
+  <meta name="description" content="Calculate monthly loan EMI, total interest, and amortisation breakdown for home, car, and personal loans in India. Instant, offline-capable, and 100% private.">
+  <link rel="canonical" href="https://veebeecodes.me/emi-calculator.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veebeecodes.me/emi-calculator.html">
+  <meta property="og:title" content="Loan EMI Calculator | Online Home, Car &amp; Personal Loan EMI Planner | VeeBee">
+  <meta property="og:description" content="Calculate monthly loan EMI, total interest, and amortisation breakdown for home, car, and personal loans in India. Instant, offline-capable, and 100% private.">
+  <meta property="og:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Loan EMI Calculator | Online Home, Car &amp; Personal Loan EMI Planner | VeeBee">
+  <meta name="twitter:description" content="Calculate monthly loan EMI, total interest, and amortisation breakdown for home, car, and personal loans in India. Instant, offline-capable, and 100% private.">
+  <meta name="twitter:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "VeeBee Online Loan EMI Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "description": "Interactive online loan EMI calculator for home, car, and personal loans in India with monthly amortization breakdown."
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What mathematical formula is used to calculate loan EMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Loan EMI is calculated using the standard reducing-balance annuity formula: EMI = [P × r × (1 + r)^n] / [(1 + r)^n - 1], where P is Principal loan amount, r is the monthly interest rate (annual rate divided by 12 and 100), and n is the total number of monthly installments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does increasing loan tenure affect EMI and total interest payable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A longer loan tenure lowers your monthly EMI payment, making it more affordable on a monthly cash flow basis. However, because you are borrowing the money for more time, the compounding interest increases substantially, resulting in much higher total interest paid over the life of the loan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this online calculator send my financial details to any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator runs 100% client-side in your web browser using vanilla JavaScript. No loan amounts, interest rates, or calculations are ever transmitted across the network or stored on remote servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export a clean 1-page PDF loan report with full amortization schedule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our native Android app 'VeeBee: Finance Calculator' offers comprehensive loan amortization schedules, pre-payment analysis, and client-ready 1-page PDF and PNG export."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Floating Header -->
+  <header class="floating-header">
+    <nav class="nav-pill" aria-label="Primary Navigation">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
+        <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#hero">Overview</a></li>
+        <li><a href="index.html#flagship">Flagship App</a></li>
+        <li class="nav-dropdown">
+          <a href="emi-calculator.html" class="nav-dropdown-toggle active" aria-current="page">Calculators ▾</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="emi-calculator.html" class="active">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#suite">Application Suite</a></li>
+        <li><a href="index.html#why-trust">Why Us</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Demi_calc_header" class="nav-cta" target="_blank" rel="noopener">
+            <svg class="nav-gp-icon" viewBox="0 0 500 500" width="16" height="16" aria-hidden="true">
+              <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
+            </svg>
+            <span>Get on Google Play</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 1.5rem;">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li><span>Calculators</span></li>
+        <li class="breadcrumb-sep" aria-hidden="true">/</li>
+        <li class="breadcrumb-current" aria-current="page">Loan EMI Calculator</li>
+      </ol>
+    </nav>
+
+    <!-- Page Title & Header -->
+    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+      <span class="section-eyebrow">Financial Planning Tool</span>
+      <h1 class="section-title" style="font-size: 2.25rem;">Loan EMI Calculator for Home, Car &amp; Personal Loans</h1>
+      <p class="section-desc" style="margin-inline: 0; max-width: 760px;">
+        Plan your borrowing with precision. Calculate your exact Equated Monthly Installment (EMI), overall interest burden, and principal payoff ratio using standard reducing balance mathematical formulas. 100% private and runs right in your browser.
+      </p>
+    </div>
+
+    <!-- Interactive Calculator Card -->
+    <div class="calc-demo-card">
+      <div class="calc-presets-bar">
+        <span class="calc-presets-label">Popular Loan Presets:</span>
+        <div class="calc-preset-group" role="group" aria-label="Quick Loan Presets">
+          <button type="button" class="preset-chip is-active" id="chip-home" onclick="setPreset(2500000, 8.5, 20, this)">Home Loan • ₹25L</button>
+          <button type="button" class="preset-chip" id="chip-car" onclick="setPreset(1000000, 9.2, 5, this)">Car Loan • ₹10L</button>
+          <button type="button" class="preset-chip" id="chip-personal" onclick="setPreset(500000, 12.5, 3, this)">Personal Loan • ₹5L</button>
+        </div>
+      </div>
+
+      <div class="calc-demo-body">
+        <!-- Controls Column -->
+        <div class="calc-sliders">
+          <!-- Loan Amount -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="input-amount-num">Loan Amount (₹)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-amount-num" class="calc-number-input" min="50000" max="100000000" step="10000" value="2500000" oninput="syncAmount(this.value)">
+                <span class="slider-val-badge" id="badge-amount">₹ 25.00 L</span>
+              </div>
+            </div>
+            <input type="range" id="slider-amount" class="veebee-slider" min="50000" max="10000000" step="25000" value="2500000" oninput="syncAmount(this.value)">
+            <div class="slider-scale">
+              <span>₹ 50K</span>
+              <span>₹ 25L</span>
+              <span>₹ 50L</span>
+              <span>₹ 1 Cr</span>
+            </div>
+          </div>
+
+          <!-- Interest Rate -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="input-rate-num">Interest Rate (% p.a.)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-rate-num" class="calc-number-input" min="1.0" max="30.0" step="0.1" value="8.5" oninput="syncRate(this.value)">
+                <span class="slider-val-badge" id="badge-rate">8.5%</span>
+              </div>
+            </div>
+            <input type="range" id="slider-rate" class="veebee-slider" min="1.0" max="30.0" step="0.1" value="8.5" oninput="syncRate(this.value)">
+            <div class="slider-scale">
+              <span>1%</span>
+              <span>8.5%</span>
+              <span>15%</span>
+              <span>30%</span>
+            </div>
+          </div>
+
+          <!-- Loan Tenure -->
+          <div class="slider-group" style="margin-bottom: 0;">
+            <div class="slider-header">
+              <label for="input-tenure-num">Tenure (Years)</label>
+              <div class="calc-input-row">
+                <input type="number" id="input-tenure-num" class="calc-number-input" min="1" max="30" step="1" value="20" oninput="syncTenure(this.value)">
+                <span class="slider-val-badge" id="badge-tenure">20 Yrs (240 Mo)</span>
+              </div>
+            </div>
+            <input type="range" id="slider-tenure" class="veebee-slider" min="1" max="30" step="1" value="20" oninput="syncTenure(this.value)">
+            <div class="slider-scale">
+              <span>1 Yr</span>
+              <span>10 Yrs</span>
+              <span>20 Yrs</span>
+              <span>30 Yrs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Column -->
+        <div class="calc-result-box" aria-live="polite">
+          <div class="calc-result-eyebrow">Monthly Equated Installment (EMI)</div>
+          <div class="calc-result-emi" id="res-emi">₹ 21,696</div>
+
+          <div class="calc-breakdown-grid">
+            <div class="cb-item">
+              <span>Principal Amount</span>
+              <strong id="res-principal">₹ 25,00,000</strong>
+            </div>
+            <div class="cb-item">
+              <span>Total Interest Payable</span>
+              <strong id="res-interest">₹ 27,06,939</strong>
+            </div>
+            <div class="cb-item">
+              <span>Total Amount (P + I)</span>
+              <strong id="res-total">₹ 52,06,939</strong>
+            </div>
+            <div class="cb-item">
+              <span>Interest Share</span>
+              <strong id="res-share">52.0% of total</strong>
+            </div>
+          </div>
+
+          <!-- Visual Ratio Bar -->
+          <div class="progress-ratio-bar" aria-hidden="true">
+            <div class="ratio-principal" id="bar-principal" style="width: 48.0%;"></div>
+            <div class="ratio-interest" id="bar-interest" style="width: 52.0%;"></div>
+          </div>
+          <div class="ratio-legend">
+            <span id="legend-principal">● Principal (48.0%)</span>
+            <span id="legend-interest">● Interest (52.0%)</span>
+          </div>
+
+          <div class="calc-disclaimer-note">
+            Calculations use standard reducing balance compounding. Actual bank EMI may vary slightly due to processing fees, broken period interest, or rounding conventions.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Explanation & Worked Example Section -->
+    <section class="section-block" style="padding-top: 2.5rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="section-eyebrow">Mathematical Formula</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">How Loan EMI Is Calculated</h2>
+      </div>
+
+      <div class="worked-example-card">
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-dark);">
+          An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs apply to both interest and principal each month so that over a specified number of years, the loan is fully paid off.
+        </p>
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-dark);">
+          In India, banks and housing finance corporations (HFCs) calculate loan EMIs using the standard reducing-balance annuity formula:
+        </p>
+
+        <div class="formula-display">
+          EMI = [P × r × (1 + r)^n] / [(1 + r)^n - 1]
+        </div>
+
+        <ul style="margin: 1rem 0 1.5rem 1.25rem; font-size: 0.94rem; color: var(--text-muted); line-height: 1.8;">
+          <li><strong>P (Principal):</strong> The total loan amount borrowed from the bank.</li>
+          <li><strong>r (Monthly Interest Rate):</strong> The annual interest rate divided by 12 months and divided by 100 (e.g. 8.5% annual rate = 8.5 / 1200 = 0.0070833).</li>
+          <li><strong>n (Tenure in Months):</strong> The loan repayment period in years multiplied by 12 (e.g. 20 years = 240 months).</li>
+        </ul>
+
+        <h3 style="font-size: 1.2rem; color: var(--brand-navy); margin-top: 1.5rem; margin-bottom: 0.75rem;">Step-by-Step Worked Example (Using Initial Values)</h3>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark);">
+          Let us calculate the EMI for a Home Loan of <strong>₹25,00,000</strong> at an interest rate of <strong>8.5% p.a.</strong> for a tenure of <strong>20 years (240 months)</strong>:
+        </p>
+        <ol style="margin: 0.75rem 0 1rem 1.25rem; font-size: 0.94rem; color: var(--text-muted); line-height: 1.8;">
+          <li>Monthly interest rate: <code>r = 8.5 / 12 / 100 = 0.00708333</code></li>
+          <li>Compound factor: <code>(1 + r)^240 = (1.00708333)^240 ≈ 5.409395</code></li>
+          <li>Numerator: <code>25,00,000 × 0.00708333 × 5.409395 ≈ 95,790.62</code></li>
+          <li>Denominator: <code>5.409395 - 1 = 4.409395</code></li>
+          <li>EMI: <code>95,790.62 / 4.409395 = ₹21,695.59</code> (rounded to nearest rupee: <strong>₹21,696/month</strong>)</li>
+          <li>Total Repayment over 20 years: <code>21,695.59 × 240 = ₹52,06,939</code></li>
+          <li>Total Interest Paid: <code>₹52,06,939 - ₹25,00,000 = ₹27,06,939</code></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-block" style="padding-top: 1rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="section-eyebrow">Frequently Asked Questions</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">Loan EMI &amp; Repayment FAQs</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>What happens to my EMI if my home loan interest rate changes?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            On floating-rate home loans, when the benchmark rate (such as RBI Repo Rate) increases or decreases, lenders typically keep your monthly EMI constant and adjust your remaining tenure. However, you can also request the bank to keep the tenure unchanged and recalculate your monthly EMI amount instead.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>How much interest can I save by making annual pre-payments?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Even small prepayments made early in your loan tenure can save you lakhs of rupees in interest because prepayments directly reduce the principal balance. For example, paying just one extra EMI per year on a 20-year home loan can reduce your overall tenure by over 3 to 4 years.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>What is the difference between a flat interest rate and a reducing rate?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            In a flat rate calculation, interest is charged on the full principal amount throughout the tenure, which leads to a significantly higher effective interest rate. In a reducing balance calculation (the standard used by reputable Indian banks), interest is charged only on the outstanding principal balance each month.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span>Does this calculator track or store my financial inputs?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. The calculator operates purely inside your web browser. No figures are ever uploaded to cloud servers or tracked. For offline calculation and storing loan amortization comparisons on your device, use our native Android app.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Play App Promotion Banner -->
+    <div class="calc-app-cta-banner">
+      <div class="calc-app-cta-text">
+        <h3>Save calculations, export PDF reports and track loans in the app</h3>
+        <p>
+          Need full month-by-month amortization schedules, loan comparison tools, and offline goal tracking? Get <strong>VeeBee: Finance Calculator</strong> on Google Play — 64 Indian financial calculators with zero login required.
+        </p>
+      </div>
+      <div>
+        <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Demi_calculator_page" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-gp-icon" viewBox="0 0 500 500" width="18" height="18" aria-hidden="true">
+            <path d="M403.4 228.6L125.8 68.4c-18.7-10.8-38.8-1.5-38.8 20.1v323c0 21.6 20.1 30.9 38.8 20.1l277.6-160.2c18.7-10.8 18.7-32 0-42.8z" fill="#FFFFFF"/>
+          </svg>
+          <span>Get Free on Google Play</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Studio Footer -->
+  <footer class="studio-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-full.png" alt="VeeBee Code Apps Logo" class="footer-brand-logo" width="104" height="52" loading="lazy">
+          <p>
+            Independent Android application engineering studio building high-precision utility tools that respect user privacy.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Online Calculators</h5>
+          <ul>
+            <li><a href="emi-calculator.html" class="active">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Application Suite</h5>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Demi_page_footer" target="_blank" rel="noopener">VeeBee: Finance Calculator</a></li>
+            <li><a href="index.html#apps">Upcoming Studio Roadmap</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Demi_page_footer" target="_blank" rel="noopener">Google Play Developer Page ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal &amp; Policies</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Financial Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact &amp; Location</h5>
+          <ul>
+            <li><a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a></li>
+            <li style="color: var(--text-dim); font-size: 0.88rem; margin-top: 0.35rem;">
+              Bangalore, Karnataka, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        Calculations, projections, and tax estimates provided on this page are for illustrative and educational purposes only and do not constitute formal lending or financial advice. See our <a href="disclaimer.html">full disclaimer</a>.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
+        <div>Independent Android Software Studio</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('is-open');
+        const b = i.querySelector('.faq-trigger');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function formatInr(val) {
+      return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      }).format(Math.round(val));
+    }
+
+    function formatLakhs(val) {
+      if (val >= 10000000) return '₹ ' + (val / 10000000).toFixed(2) + ' Cr';
+      if (val >= 100000) return '₹ ' + (val / 100000).toFixed(2) + ' L';
+      return formatInr(val);
+    }
+
+    function calculateEmi() {
+      const p = parseFloat(document.getElementById('input-amount-num').value) || 0;
+      const rateAnnual = parseFloat(document.getElementById('input-rate-num').value) || 0;
+      const tenureYears = parseFloat(document.getElementById('input-tenure-num').value) || 0;
+
+      const r = rateAnnual / 12 / 100;
+      const n = tenureYears * 12;
+
+      let emi = 0;
+      if (p > 0 && n > 0) {
+        if (r === 0) {
+          emi = p / n;
+        } else {
+          const rFactor = Math.pow(1 + r, n);
+          emi = (p * r * rFactor) / (rFactor - 1);
+        }
+      }
+
+      const totalPayment = emi * n;
+      const totalInterest = Math.max(0, totalPayment - p);
+      const principalPct = totalPayment > 0 ? (p / totalPayment) * 100 : 100;
+      const interestPct = totalPayment > 0 ? (totalInterest / totalPayment) * 100 : 0;
+
+      document.getElementById('res-emi').textContent = formatInr(emi);
+      document.getElementById('res-principal').textContent = formatInr(p);
+      document.getElementById('res-interest').textContent = formatInr(totalInterest);
+      document.getElementById('res-total').textContent = formatInr(totalPayment);
+      document.getElementById('res-share').textContent = interestPct.toFixed(1) + '% of total';
+
+      document.getElementById('bar-principal').style.width = principalPct.toFixed(1) + '%';
+      document.getElementById('bar-interest').style.width = interestPct.toFixed(1) + '%';
+      document.getElementById('legend-principal').textContent = '● Principal (' + principalPct.toFixed(1) + '%)';
+      document.getElementById('legend-interest').textContent = '● Interest (' + interestPct.toFixed(1) + '%)';
+
+      document.getElementById('badge-amount').textContent = formatLakhs(p);
+      document.getElementById('badge-rate').textContent = rateAnnual.toFixed(1) + '%';
+      document.getElementById('badge-tenure').textContent = tenureYears + ' Yrs (' + Math.round(n) + ' Mo)';
+    }
+
+    function syncAmount(val) {
+      document.getElementById('slider-amount').value = val;
+      document.getElementById('input-amount-num').value = val;
+      calculateEmi();
+    }
+
+    function syncRate(val) {
+      document.getElementById('slider-rate').value = val;
+      document.getElementById('input-rate-num').value = val;
+      calculateEmi();
+    }
+
+    function syncTenure(val) {
+      document.getElementById('slider-tenure').value = val;
+      document.getElementById('input-tenure-num').value = val;
+      calculateEmi();
+    }
+
+    function setPreset(p, r, t, chip) {
+      document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+      syncAmount(p);
+      syncRate(r);
+      syncTenure(t);
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', calculateEmi);
+  </script>
+</body>
+</html>
