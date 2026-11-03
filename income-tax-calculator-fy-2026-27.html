@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Income Tax Calculator FY 2026-27 | Tax Year 2026-27 | New vs Old Regime | VeeBee</title>
-  <meta name="description" content="Calculate income tax for FY 2026-27 (Tax Year 2026-27 under Income-tax Act, 2025) and previous assessment years. Compare New vs Old Tax Regime, Section 87A rebate, and marginal relief.">
+  <title>Income Tax Calculator FY 2026-27: New vs Old Regime | VeeBee</title>
+  <meta name="description" content="Compare the new and old tax regimes for Tax Year 2026-27 (FY 2026-27), FY 2025-26 and FY 2024-25. Includes standard deduction, rebate, marginal relief and 4% cess. Your inputs never leave your browser.">
   <link rel="canonical" href="https://veebeecodes.me/income-tax-calculator-fy-2026-27.html">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veebeecodes.me/income-tax-calculator-fy-2026-27.html">
-  <meta property="og:title" content="Income Tax Calculator FY 2026-27 | Tax Year 2026-27 | New vs Old Regime | VeeBee">
-  <meta property="og:description" content="Calculate income tax for FY 2026-27 (Tax Year 2026-27 under Income-tax Act, 2025) and previous assessment years. Compare New vs Old Tax Regime, Section 87A rebate, and marginal relief.">
+  <meta property="og:title" content="Income Tax Calculator FY 2026-27: New vs Old Regime | VeeBee">
+  <meta property="og:description" content="Compare the new and old tax regimes for Tax Year 2026-27 (FY 2026-27), FY 2025-26 and FY 2024-25. Includes standard deduction, rebate, marginal relief and 4% cess. Your inputs never leave your browser.">
   <meta property="og:image" content="https://veebeecodes.me/assets/og-image.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Income Tax Calculator FY 2026-27 | Tax Year 2026-27 | New vs Old Regime | VeeBee">
-  <meta name="twitter:description" content="Calculate income tax for FY 2026-27 (Tax Year 2026-27 under Income-tax Act, 2025) and previous assessment years. Compare New vs Old Tax Regime, Section 87A rebate, and marginal relief.">
+  <meta name="twitter:title" content="Income Tax Calculator FY 2026-27: New vs Old Regime | VeeBee">
+  <meta name="twitter:description" content="Compare the new and old tax regimes for Tax Year 2026-27 (FY 2026-27), FY 2025-26 and FY 2024-25. Includes standard deduction, rebate, marginal relief and 4% cess. Your inputs never leave your browser.">
   <meta name="twitter:image" content="https://veebeecodes.me/assets/og-image.png">
 
   <!-- Structured Data: WebApplication -->
@@ -26,7 +26,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "VeeBee Online Income Tax Calculator FY 2026-27",
+    "name": "Income Tax Calculator FY 2026-27: New vs Old Regime | VeeBee",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -34,7 +34,7 @@
       "price": "0",
       "priceCurrency": "INR"
     },
-    "description": "Interactive online income tax calculator for Indian taxpayers comparing New Tax Regime and Old Tax Regime for Tax Year 2026-27 (Income-tax Act, 2025) and prior assessment years."
+    "description": "Compare the new and old tax regimes for Tax Year 2026-27 (FY 2026-27), FY 2025-26 and FY 2024-25. Includes standard deduction, rebate, marginal relief and 4% cess. Your inputs never leave your browser."
   }
   </script>
 
@@ -49,7 +49,7 @@
         "name": "What is the zero-tax income limit under the FY 2026-27 New Tax Regime for salaried employees?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For Tax Year 2026-27 (under the Income-tax Act, 2025), salaried employees pay ₹0 income tax on gross earnings up to ₹12,75,000. This is achieved by combining the ₹75,000 Standard Deduction with the expanded Section 87A (1961 Act numbering; renumbered under the 2025 Act) rebate on taxable income up to ₹12,00,000."
+          "text": "For Tax Year 2026-27 (under the Income-tax Act, 2025), salaried employees pay ₹0 income tax on gross earnings up to ₹12,75,000. This is achieved by combining the ₹75,000 Standard Deduction with the expanded Section 87A rebate on taxable income up to ₹12,00,000. The Income-tax Act, 2025 renumbers sections. This calculator uses the familiar 1961 numbers (87A, 80C, 80D)."
         }
       },
       {
@@ -93,31 +93,34 @@
         <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
       </a>
 
-      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg class="icon-hamburger" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+        <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html#showcase">Flagship App</a></li>
+        <li><a href="index.html#showcase" onclick="closeMenu()">Flagship App</a></li>
         <li class="nav-dropdown">
           <a href="income-tax-calculator-fy-2026-27.html" class="nav-dropdown-toggle active" aria-current="page">Calculators ▾</a>
           <ul class="nav-dropdown-menu">
-            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
-            <li><a href="sip-calculator.html">SIP Return Calculator</a></li>
-            <li><a href="income-tax-calculator-fy-2026-27.html" class="active">Income Tax (FY 2026–27)</a></li>
+            <li><a href="emi-calculator.html" onclick="closeMenu()">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html" onclick="closeMenu()">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html" class="active" onclick="closeMenu()">Income Tax (FY 2026–27)</a></li>
           </ul>
         </li>
-        <li><a href="index.html#live-calculator">Live Calculator</a></li>
-        <li><a href="index.html#apps">App Suite</a></li>
-        <li><a href="index.html#why-veebee">Principles</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="index.html#live-calculator" onclick="closeMenu()">Live Calculator</a></li>
+        <li><a href="index.html#apps" onclick="closeMenu()">App Suite</a></li>
+        <li><a href="index.html#why-veebee" onclick="closeMenu()">Principles</a></li>
+        <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+        <li><a href="privacy.html" onclick="closeMenu()">Privacy</a></li>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dtax_calc_header" class="nav-cta" target="_blank" rel="noopener">
             <img src="assets/google-play-white.png" alt="" width="14" height="17" class="gp-icon-img" aria-hidden="true">
-            Google Play
+            <span>Get on Google Play</span>
           </a>
         </li>
       </ul>
@@ -139,9 +142,9 @@
     <!-- Page Title & Header -->
     <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
       <span class="section-eyebrow">Tax Planning &amp; Compliance</span>
-      <h1 class="section-title" style="font-size: 2.25rem;">Income Tax Calculator FY 2026-27 (Tax Year 2026-27)</h1>
+      <h1 class="section-title" style="font-size: 2.25rem;">Income Tax Calculator FY 2026-27: New vs Old Regime</h1>
       <p class="section-desc" style="margin-inline: 0; max-width: 760px;">
-        Compare New Tax Regime vs Old Tax Regime for Tax Year 2026-27 (Income-tax Act, 2025), FY 2025-26 (AY 2026-27), and FY 2024-25 (AY 2025-26). Accurate computation with Standard Deduction, Section 87A (1961 Act numbering; renumbered under the 2025 Act) rebate, marginal relief, and 4% Health &amp; Education Cess. Your inputs never leave your browser.
+        Compare the new and old tax regimes for Tax Year 2026-27 (FY 2026-27), FY 2025-26 and FY 2024-25. Includes standard deduction, rebate, marginal relief and 4% cess. Your inputs never leave your browser.
       </p>
     </div>
 
@@ -174,9 +177,9 @@
           <div class="slider-group">
             <div class="slider-header">
               <label for="input-gross-val">Gross Annual Income</label>
-              <input type="text" id="input-gross-val" class="calc-val-input" value="₹ 15,00,000" onchange="parseGrossInput(this.value)" onblur="blurGrossInput(this.value)">
+              <input type="text" id="input-gross-val" class="calc-val-input" inputmode="decimal" aria-label="Gross Annual Income in Rupees" value="₹ 15,00,000" oninput="parseGrossInput(this.value)" onblur="blurGrossInput(this.value)">
             </div>
-            <input type="range" id="slider-gross" class="veebee-slider" min="300000" max="5000000" step="25000" value="1500000" oninput="syncGrossSlider(this.value)">
+            <input type="range" id="slider-gross" class="veebee-slider" min="300000" max="5000000" step="25000" value="1500000" aria-label="Gross Annual Income Slider" oninput="syncGrossSlider(this.value)">
             <div class="slider-scale">
               <span>₹ 3L</span>
               <span>₹ 12L</span>
@@ -190,26 +193,26 @@
             <div style="margin-bottom: 0.65rem;">
               <span style="font-weight: 700; font-size: 0.88rem; color: var(--brand-navy); display: block; margin-bottom: 0.35rem;">Old Regime Deductions (For Comparison)</span>
               <p style="font-size: 0.78rem; line-height: 1.5; color: var(--text-muted); margin: 0;">
-                <strong>Scope Note:</strong> This web calculator models the standard deduction, Section 80C (1961 Act numbering; renumbered under the 2025 Act), Section 80D (1961 Act numbering; renumbered under the 2025 Act), Section 24(b) home loan interest, and Section 80CCD(1B) NPS. It does not model HRA exemption (Section 10(13A)), education loan interest (80E), or other Chapter VI-A deductions. The full <strong>VeeBee Finance Calculator</strong> Android app includes complete HRA computation, capital gains estimators, and comprehensive deduction schedules.
+                <strong>Scope Note:</strong> The Income-tax Act, 2025 renumbers sections. This calculator uses the familiar 1961 numbers (87A, 80C, 80D). This web calculator models the standard deduction, Section 80C, Section 80D, Section 24(b) home loan interest, and Section 80CCD(1B) NPS. It does not model HRA exemption (Section 10(13A)), education loan interest (80E), or other Chapter VI-A deductions. The full <strong>VeeBee Finance Calculator</strong> Android app includes complete HRA computation, capital gains estimators, and comprehensive deduction schedules.
               </p>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 0.85rem;">
               <div>
                 <label for="input-80c-val" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem;">Sec 80C (Max ₹1.5L)*</label>
-                <input type="text" id="input-80c-val" class="calc-val-input" style="width: 100%; max-width: none;" value="₹ 1,50,000" onchange="parseDeduction('c80', this.value, 150000)" onblur="blurDeduction('c80', this.value, 150000)">
+                <input type="text" id="input-80c-val" class="calc-val-input" style="width: 100%; max-width: none;" inputmode="decimal" aria-label="Section 80C Deduction in Rupees (Max ₹1.5 Lakhs)" value="₹ 1,50,000" oninput="parseDeduction('c80', this.value, 150000)" onblur="blurDeduction('c80', this.value, 150000)">
               </div>
               <div>
                 <label for="input-80d-val" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem;">Sec 80D Health (Max ₹1L)*</label>
-                <input type="text" id="input-80d-val" class="calc-val-input" style="width: 100%; max-width: none;" value="₹ 25,000" onchange="parseDeduction('d80', this.value, 100000)" onblur="blurDeduction('d80', this.value, 100000)">
+                <input type="text" id="input-80d-val" class="calc-val-input" style="width: 100%; max-width: none;" inputmode="decimal" aria-label="Section 80D Health Insurance Deduction in Rupees (Max ₹1 Lakh)" value="₹ 25,000" oninput="parseDeduction('d80', this.value, 100000)" onblur="blurDeduction('d80', this.value, 100000)">
               </div>
               <div>
                 <label for="input-24b-val" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem;">Sec 24(b) Home Loan (Max ₹2L)</label>
-                <input type="text" id="input-24b-val" class="calc-val-input" style="width: 100%; max-width: none;" value="₹ 0" onchange="parseDeduction('s24', this.value, 200000)" onblur="blurDeduction('s24', this.value, 200000)">
+                <input type="text" id="input-24b-val" class="calc-val-input" style="width: 100%; max-width: none;" inputmode="decimal" aria-label="Section 24(b) Home Loan Interest Deduction in Rupees (Max ₹2 Lakhs)" value="₹ 0" oninput="parseDeduction('s24', this.value, 200000)" onblur="blurDeduction('s24', this.value, 200000)">
               </div>
               <div>
                 <label for="input-nps-val" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem;">80CCD(1B) NPS (Max ₹50K)</label>
-                <input type="text" id="input-nps-val" class="calc-val-input" style="width: 100%; max-width: none;" value="₹ 0" onchange="parseDeduction('nps', this.value, 50000)" onblur="blurDeduction('nps', this.value, 50000)">
+                <input type="text" id="input-nps-val" class="calc-val-input" style="width: 100%; max-width: none;" inputmode="decimal" aria-label="Section 80CCD(1B) NPS Contribution in Rupees (Max ₹50,000)" value="₹ 0" oninput="parseDeduction('nps', this.value, 50000)" onblur="blurDeduction('nps', this.value, 50000)">
               </div>
             </div>
             <div style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.5rem;">
@@ -350,7 +353,7 @@
             </svg>
           </button>
           <div class="faq-answer">
-            For salaried employees, gross income up to ₹12,75,000 first receives a standard deduction of ₹75,000, reducing net taxable income to ₹12,00,000. Under Tax Year 2026-27 (Income-tax Act, 2025) New Tax Regime, Section 87A (1961 Act numbering; renumbered under the 2025 Act) grants a full rebate up to ₹60,000 for taxable income up to ₹12 Lakhs, making your tax liability exactly ₹0.
+            For salaried employees, gross income up to ₹12,75,000 first receives a standard deduction of ₹75,000, reducing net taxable income to ₹12,00,000. Under Tax Year 2026-27 (Income-tax Act, 2025) New Tax Regime, Section 87A grants a full rebate up to ₹60,000 for taxable income up to ₹12 Lakhs, making your tax liability exactly ₹0. The Income-tax Act, 2025 renumbers sections. This calculator uses the familiar 1961 numbers (87A, 80C, 80D).
           </div>
         </div>
 
@@ -475,7 +478,22 @@
       const btn = document.getElementById('nav-toggle-btn');
       if (menu) {
         const isOpen = menu.classList.toggle('is-open');
-        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (btn) {
+          btn.classList.toggle('is-active', isOpen);
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu && menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        if (btn) {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-expanded', 'false');
+        }
       }
     }
 
@@ -503,8 +521,11 @@
     }
 
     function parseInr(str) {
+      if (str === null || str === undefined) return 0;
       const cleaned = ('' + str).replace(/[^0-9.]/g, '');
-      return parseFloat(cleaned) || 0;
+      if (!cleaned) return 0;
+      const num = parseFloat(cleaned);
+      return isNaN(num) ? 0 : num;
     }
 
     let currentFy = '2026-27';
@@ -536,14 +557,15 @@
     }
 
     function parseGrossInput(val) {
-      grossIncome = Math.max(0, parseInr(val));
-      document.getElementById('slider-gross').value = Math.min(grossIncome, 5000000);
+      grossIncome = Math.max(0, Math.min(100000000, parseInr(val)));
+      document.getElementById('slider-gross').value = Math.min(Math.max(grossIncome, 300000), 5000000);
       calculateTax();
     }
 
     function blurGrossInput(val) {
-      grossIncome = Math.max(0, parseInr(val));
+      grossIncome = Math.max(0, Math.min(100000000, parseInr(val)));
       document.getElementById('input-gross-val').value = formatInr(grossIncome);
+      document.getElementById('slider-gross').value = Math.min(Math.max(grossIncome, 300000), 5000000);
       calculateTax();
     }
 
@@ -560,7 +582,9 @@
 
     function blurDeduction(key, val, maxLimit) {
       deductions[key] = Math.min(Math.max(0, parseInr(val)), maxLimit);
-      document.getElementById('input-' + (key === 'c80' ? '80c' : key === 'd80' ? '80d' : key === 's24' ? '24b' : 'nps') + '-val').value = formatInr(deductions[key]);
+      const id = 'input-' + (key === 'c80' ? '80c' : key === 'd80' ? '80d' : key === 's24' ? '24b' : 'nps') + '-val';
+      const el = document.getElementById(id);
+      if (el) el.value = formatInr(deductions[key]);
       calculateTax();
     }
 

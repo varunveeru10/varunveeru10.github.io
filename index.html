@@ -89,9 +89,12 @@
         <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
         <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
       </a>
-      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg class="icon-hamburger" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+        <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
       <ul class="nav-links" id="nav-links">
@@ -108,7 +111,7 @@
         <li><a href="#apps" onclick="closeMenu()">App Suite</a></li>
         <li><a href="#why-veebee" onclick="closeMenu()">Principles</a></li>
         <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="privacy.html" onclick="closeMenu()">Privacy</a></li>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dhome_hero" target="_blank" rel="noopener" class="nav-cta">
             <img src="assets/google-play-white.png" alt="" width="14" height="17" class="gp-icon-img" aria-hidden="true">
@@ -186,7 +189,7 @@
 
           <div class="phone-duo">
             <img
-              src="assets/phone-home-cutout.png"
+              src="assets/phone-home-cutout.png?v=2"
               alt="VeeBee Finance Calculator Home Screen showing Quick EMI slider and Popular Calculators"
               class="phone-main"
               width="262"
@@ -194,7 +197,7 @@
               fetchpriority="high"
             >
             <img
-              src="assets/phone-networth-cutout.png"
+              src="assets/phone-networth-cutout.png?v=2"
               alt="VeeBee Finance Calculator Private Net Worth Dashboard screen"
               class="phone-secondary"
               width="238"
@@ -1062,15 +1065,23 @@
       const btn = document.getElementById('nav-toggle-btn');
       if (menu) {
         const isOpen = menu.classList.toggle('is-open');
-        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (btn) {
+          btn.classList.toggle('is-active', isOpen);
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
       }
     }
 
     function closeMenu() {
       const menu = document.getElementById('nav-links');
       const btn = document.getElementById('nav-toggle-btn');
-      if (menu) menu.classList.remove('is-open');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
+      if (menu && menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        if (btn) {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      }
     }
 
     function switchTab(key) {

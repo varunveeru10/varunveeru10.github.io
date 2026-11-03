@@ -93,27 +93,30 @@
         <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
       </a>
 
-      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMenu()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg class="icon-hamburger" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+        <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html#showcase">Flagship App</a></li>
+        <li><a href="index.html#showcase" onclick="closeMenu()">Flagship App</a></li>
         <li class="nav-dropdown">
           <a href="sip-calculator.html" class="nav-dropdown-toggle active" aria-current="page">Calculators ▾</a>
           <ul class="nav-dropdown-menu">
-            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
-            <li><a href="sip-calculator.html" class="active">SIP Return Calculator</a></li>
-            <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
+            <li><a href="emi-calculator.html" onclick="closeMenu()">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html" class="active" onclick="closeMenu()">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html" onclick="closeMenu()">Income Tax (FY 2026–27)</a></li>
           </ul>
         </li>
-        <li><a href="index.html#live-calculator">Live Calculator</a></li>
-        <li><a href="index.html#apps">App Suite</a></li>
-        <li><a href="index.html#why-veebee">Principles</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="index.html#live-calculator" onclick="closeMenu()">Live Calculator</a></li>
+        <li><a href="index.html#apps" onclick="closeMenu()">App Suite</a></li>
+        <li><a href="index.html#why-veebee" onclick="closeMenu()">Principles</a></li>
+        <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+        <li><a href="privacy.html" onclick="closeMenu()">Privacy</a></li>
         <li>
           <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3Dsip_calc_header" class="nav-cta" target="_blank" rel="noopener">
             <img src="assets/google-play-white.png" alt="" width="14" height="17" class="gp-icon-img" aria-hidden="true">
@@ -163,9 +166,9 @@
           <div class="slider-group">
             <div class="slider-header">
               <label for="input-monthly-val">Monthly Investment (₹)</label>
-              <input type="text" id="input-monthly-val" class="calc-val-input" value="₹ 10,000" oninput="parseMonthlyInput(this.value)" onblur="blurMonthlyInput(this.value)" aria-label="Monthly Investment">
+              <input type="text" id="input-monthly-val" class="calc-val-input" inputmode="decimal" value="₹ 10,000" oninput="parseMonthlyInput(this.value)" onblur="blurMonthlyInput(this.value)" aria-label="Monthly Investment Amount in Rupees">
             </div>
-            <input type="range" id="slider-monthly" class="veebee-slider" min="500" max="100000" step="500" value="10000" oninput="syncMonthlySlider(this.value)">
+            <input type="range" id="slider-monthly" class="veebee-slider" min="500" max="100000" step="500" value="10000" aria-label="Monthly Investment Slider" oninput="syncMonthlySlider(this.value)">
             <div class="slider-scale">
               <span>₹ 500</span>
               <span>₹ 25K</span>
@@ -178,9 +181,9 @@
           <div class="slider-group">
             <div class="slider-header">
               <label for="input-return-val">Expected Return Rate (% p.a.)</label>
-              <input type="text" id="input-return-val" class="calc-val-input" value="12.0%" oninput="parseReturnInput(this.value)" onblur="blurReturnInput(this.value)" aria-label="Expected Return Rate">
+              <input type="text" id="input-return-val" class="calc-val-input" inputmode="decimal" value="12.0%" oninput="parseReturnInput(this.value)" onblur="blurReturnInput(this.value)" aria-label="Expected Return Rate Percentage per Annum">
             </div>
-            <input type="range" id="slider-return" class="veebee-slider" min="1.0" max="30.0" step="0.1" value="12.0" oninput="syncReturnSlider(this.value)">
+            <input type="range" id="slider-return" class="veebee-slider" min="1.0" max="30.0" step="0.1" value="12.0" aria-label="Expected Return Rate Slider" oninput="syncReturnSlider(this.value)">
             <div class="slider-scale">
               <span>1%</span>
               <span>10%</span>
@@ -193,9 +196,9 @@
           <div class="slider-group" style="margin-bottom: 0;">
             <div class="slider-header">
               <label for="input-tenure-val">Investment Period (Years)</label>
-              <input type="text" id="input-tenure-val" class="calc-val-input" value="10 Yrs" oninput="parseTenureInput(this.value)" onblur="blurTenureInput(this.value)" aria-label="Investment Period">
+              <input type="text" id="input-tenure-val" class="calc-val-input" inputmode="decimal" value="10 Yrs" oninput="parseTenureInput(this.value)" onblur="blurTenureInput(this.value)" aria-label="Investment Period in Years">
             </div>
-            <input type="range" id="slider-tenure" class="veebee-slider" min="1" max="40" step="1" value="10" oninput="syncTenureSlider(this.value)">
+            <input type="range" id="slider-tenure" class="veebee-slider" min="1" max="40" step="1" value="10" aria-label="Investment Period Slider" oninput="syncTenureSlider(this.value)">
             <div class="slider-scale">
               <span>1 Yr</span>
               <span>10 Yrs</span>
@@ -432,7 +435,22 @@
       const btn = document.getElementById('nav-toggle-btn');
       if (menu) {
         const isOpen = menu.classList.toggle('is-open');
-        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (btn) {
+          btn.classList.toggle('is-active', isOpen);
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu && menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        if (btn) {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-expanded', 'false');
+        }
       }
     }
 
@@ -464,20 +482,25 @@
     }
 
     function parseInr(val) {
-      if (typeof val === 'number') return val;
+      if (val === null || val === undefined) return 0;
+      if (typeof val === 'number') return isNaN(val) ? 0 : val;
       const cleaned = String(val).replace(/[^0-9.]/g, '');
-      return parseFloat(cleaned) || 0;
+      if (!cleaned) return 0;
+      const num = parseFloat(cleaned);
+      return isNaN(num) ? 0 : num;
     }
 
     function parseMonthlyInput(val) {
       monthlyInvestment = Math.max(0, parseInr(val));
-      document.getElementById('slider-monthly').value = Math.min(monthlyInvestment, 100000);
+      document.getElementById('slider-monthly').value = Math.min(Math.max(monthlyInvestment, 500), 100000);
       calculateSip();
     }
 
     function blurMonthlyInput(val) {
-      monthlyInvestment = Math.max(0, parseInr(val));
+      const parsed = parseInr(val);
+      monthlyInvestment = Math.max(100, Math.min(10000000, parsed || 10000));
       document.getElementById('input-monthly-val').value = formatInr(monthlyInvestment);
+      document.getElementById('slider-monthly').value = Math.min(Math.max(monthlyInvestment, 500), 100000);
       calculateSip();
     }
 
@@ -488,14 +511,19 @@
     }
 
     function parseReturnInput(val) {
-      expectedReturnRate = Math.max(0.1, Math.min(30, parseInr(val)));
-      document.getElementById('slider-return').value = expectedReturnRate;
-      calculateSip();
+      const parsed = parseInr(val);
+      if (parsed > 0) {
+        expectedReturnRate = Math.max(0.1, Math.min(30.0, parsed));
+        document.getElementById('slider-return').value = expectedReturnRate;
+        calculateSip();
+      }
     }
 
     function blurReturnInput(val) {
-      expectedReturnRate = Math.max(0.1, Math.min(30, parseInr(val)));
+      const parsed = parseInr(val);
+      expectedReturnRate = Math.max(0.1, Math.min(30.0, parsed || 12.0));
       document.getElementById('input-return-val').value = expectedReturnRate.toFixed(1) + '%';
+      document.getElementById('slider-return').value = expectedReturnRate;
       calculateSip();
     }
 
@@ -506,14 +534,19 @@
     }
 
     function parseTenureInput(val) {
-      tenureYears = Math.max(1, Math.min(40, Math.round(parseInr(val))));
-      document.getElementById('slider-tenure').value = tenureYears;
-      calculateSip();
+      const parsed = Math.round(parseInr(val));
+      if (parsed > 0) {
+        tenureYears = Math.max(1, Math.min(40, parsed));
+        document.getElementById('slider-tenure').value = tenureYears;
+        calculateSip();
+      }
     }
 
     function blurTenureInput(val) {
-      tenureYears = Math.max(1, Math.min(40, Math.round(parseInr(val))));
+      const parsed = Math.round(parseInr(val));
+      tenureYears = Math.max(1, Math.min(40, parsed || 10));
       document.getElementById('input-tenure-val').value = tenureYears + ' Yrs';
+      document.getElementById('slider-tenure').value = tenureYears;
       calculateSip();
     }
 
