@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F8FAFC">
+  <title>404: Page Not Found | VeeBee Code Apps</title>
+  <meta name="description" content="The page you are looking for doesn't exist or may have been moved. Browse VeeBee Code Apps finance tools or return home.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="404: Page Not Found | VeeBee Code Apps">
+  <meta property="og:description" content="The page you are looking for doesn't exist or may have been moved.">
+  <meta property="og:image" content="https://veebeecodes.me/assets/og-image.png">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+    .error-code {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      background: var(--bg-ice);
+      border: 1px solid var(--border-brand);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+    .error-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--brand-navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .error-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .error-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      max-width: 820px;
+      margin: 0 auto 3rem;
+      text-align: left;
+    }
+    .error-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-xs);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .error-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+    }
+    .error-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--brand-navy);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .error-card h3 svg {
+      width: 16px;
+      height: 16px;
+      color: var(--brand-primary);
+      flex-shrink: 0;
+      margin-left: 0.5rem;
+    }
+    .error-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Floating Header -->
+  <header class="floating-header">
+    <nav class="nav-pill" aria-label="Primary Navigation">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-mark.png" alt="" class="logo-img" width="87" height="32">
+        <span class="logo-text"><span class="brand-vb">VeeBee</span> Code Apps</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" id="nav-toggle-btn" onclick="toggleMenu()">
+        <svg class="icon-hamburger" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+        <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#showcase" onclick="closeMenu()">Flagship App</a></li>
+        <li class="nav-dropdown">
+          <a href="emi-calculator.html" class="nav-dropdown-toggle">Calculators ▾</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="emi-calculator.html" onclick="closeMenu()">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html" onclick="closeMenu()">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html" onclick="closeMenu()">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#live-calculator" onclick="closeMenu()">Live Calculator</a></li>
+        <li><a href="index.html#apps" onclick="closeMenu()">App Suite</a></li>
+        <li><a href="index.html#why-veebee" onclick="closeMenu()">Principles</a></li>
+        <li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+        <li><a href="privacy.html" onclick="closeMenu()">Privacy</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3D404_header" class="nav-cta" target="_blank" rel="noopener">
+            <img src="assets/google-play-white.png" alt="" width="14" height="17" class="gp-icon-img" aria-hidden="true">
+            <span>Get on Google Play</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 2rem;">
+    <section class="error-hero">
+      <div class="error-code">HTTP 404 &bull; PAGE NOT FOUND</div>
+      <h1 class="error-title">Looking for a Calculation?</h1>
+      <p class="error-desc">
+        The link you followed may be broken or the page may have been moved. Use the quick links below to get back on track.
+      </p>
+
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">
+          <span>&larr; Return to Home</span>
+        </a>
+        <a href="emi-calculator.html" class="btn btn-secondary">
+          <span>Explore Online Calculators</span>
+        </a>
+      </div>
+
+      <div class="error-grid">
+        <a href="emi-calculator.html" class="error-card">
+          <div>
+            <h3>Loan EMI Calculator
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </h3>
+            <p>Compute home, car, or personal loan EMIs with amortization breakdown.</p>
+          </div>
+        </a>
+
+        <a href="sip-calculator.html" class="error-card">
+          <div>
+            <h3>SIP Wealth Planner
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </h3>
+            <p>Plan mutual fund SIPs and lumpsum compounding with yearly step-ups.</p>
+          </div>
+        </a>
+
+        <a href="income-tax-calculator-fy-2026-27.html" class="error-card">
+          <div>
+            <h3>Income Tax (FY 2026–27)
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </h3>
+            <p>Compare New vs Old Tax Regime with marginal relief and standard deduction.</p>
+          </div>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3D404_card" class="error-card" target="_blank" rel="noopener">
+          <div>
+            <h3>VeeBee Android App ↗
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </h3>
+            <p>64 offline Indian finance calculators with client-ready PDF reports.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Studio Footer -->
+  <footer class="studio-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-full.png" alt="VeeBee Code Apps Logo" class="footer-brand-logo" width="104" height="52" loading="lazy">
+          <p>
+            Independent Android application engineering studio building high-precision utility tools that respect user privacy.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Online Calculators</h5>
+          <ul>
+            <li><a href="emi-calculator.html">Loan EMI Calculator</a></li>
+            <li><a href="sip-calculator.html">SIP Return Calculator</a></li>
+            <li><a href="income-tax-calculator-fy-2026-27.html">Income Tax (FY 2026–27)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Application Suite</h5>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.veebee.fincalc&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3D404_footer" target="_blank" rel="noopener">VeeBee: Finance Calculator</a></li>
+            <li><a href="index.html#apps">Upcoming Studio Roadmap</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=VeeBee+Code+Apps&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_campaign%3D404_footer" target="_blank" rel="noopener">Google Play Developer Page ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal &amp; Policies</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Financial Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact &amp; Location</h5>
+          <ul>
+            <li><a href="mailto:contact@veebeecodes.me">contact@veebeecodes.me</a></li>
+            <li style="color: var(--text-dim); font-size: 0.88rem; margin-top: 0.35rem;">
+              Bangalore, Karnataka, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        Calculations, projections, and tax estimates provided on this page are for illustrative and educational purposes only and do not constitute formal lending or financial advice. See our <a href="disclaimer.html">full disclaimer</a>.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VeeBee Code Apps. All rights reserved.</div>
+        <div>Independent Android Software Studio</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        if (btn) {
+          btn.classList.toggle('is-active', isOpen);
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('nav-links');
+      const btn = document.getElementById('nav-toggle-btn');
+      if (menu && menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        if (btn) {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
